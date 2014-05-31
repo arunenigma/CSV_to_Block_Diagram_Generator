@@ -1,0 +1,22 @@
+digraph G {
+    graph [rankdir = LR, splines=ortho, label="Sample Block Diagram"];
+
+    node[shape=box];
+    Bar[label="Bar", height=1];
+    Foo[label="Foo", height=4];
+
+    Bew[label="Bew", height=2];
+    Gate[label="Gate", height=2];
+
+    Bar -> Foo [xlabel="aa"];
+    Bar -> Foo [xlabel="bb"];
+    Bar -> Foo [xlabel="cc"];
+
+    Foo -> Bew [xlabel="dd"];
+    Foo -> Bew [xlabel="ee"];
+    Bew -> Foo [xlabel="ff"];
+
+
+    Foo -> Gate [xlabel="gg"];
+    Foo -> Gate [xlabel="hh"];
+}

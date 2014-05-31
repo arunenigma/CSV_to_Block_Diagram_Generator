@@ -1,0 +1,6 @@
+// foo
+digraph {
+	A [label=arun]
+	B [label=Bhanu]
+		A -> B
+}

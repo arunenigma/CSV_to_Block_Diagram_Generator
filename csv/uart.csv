@@ -1,0 +1,1 @@
+Physical Name	Direction	Bit	Source	Logical Name	Constraint	Commentshclk	in	1	system	ahbclock	none	hsurtclk	in	1	system	moduleclock		pwrite	in	1	system			paddr	in	32	system			out	out	1	system			
