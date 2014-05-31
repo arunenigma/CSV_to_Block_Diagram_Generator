@@ -15,6 +15,7 @@ class CSVtoBlock(object):
         self.knol_ = {}
         self.data = []
         self.data_ = []
+        self.dot = None
 
     def read_csv(self, directory, csv_file):
         path = directory + '/' + csv_file
@@ -42,6 +43,7 @@ class CSVtoBlock(object):
                 if i == int(k[0]):
                     self.knol_[k[2:]] = lst
         print self.knol_
+        self.construct_digraph(csv_file)
 
     def read_csv_dir(self):
         # read the csv files from dir "csv"
@@ -49,13 +51,29 @@ class CSVtoBlock(object):
             for csv_file in csv_files:
                 self.read_csv(directory, csv_file)
 
-    def construct_digraph(self):
-        pass
+    def construct_digraph(self, f_name):
+        main_block = f_name.split('.')[0].upper()
+        self.dot = Digraph(comment=main_block)
+        self.dot.node('main', main_block, shape='box', fontsize='8', fixedsize='true', width='2', height='3')
 
     def find_correlation(self):
-        pass
+        direction = self.data_[1]
+        for i, item in enumerate(self.data_[0]):
+            if direction[i] == 'in':
+                self.dot.node(str(i), 'secret', style='invis')
+                self.dot.edge(str(i), 'main', xlabel=item, constraint='true')
+            else:
+                self.dot.node(str(i), 'secret', style='invis')
+                self.dot.edge('main', str(i), xlabel=item, constraint='true')
 
-    
+    def write_dot(self):
+        f = open('block.dot', 'wb')
+        f.write(self.dot.source)
+        f.close()
+        g = pgv.AGraph(file='block.dot', rankdir='LR', splines='ortho')
+        g.layout(prog='dot')
+        g.draw('block.pdf')
+        g.close()
 
     @staticmethod
     def boo():
@@ -73,5 +91,7 @@ class CSVtoBlock(object):
 
 if __name__ == '__main__':
     c = CSVtoBlock()
-    c.boo()
+    #c.boo()
     c.read_csv_dir()
+    c.find_correlation()
+    c.write_dot()

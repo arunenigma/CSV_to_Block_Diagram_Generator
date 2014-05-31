@@ -1,6 +1,0 @@
-// foo
-digraph {
-	A [label=Apple]
-	B [label=Ball]
-		A -> B
-}
