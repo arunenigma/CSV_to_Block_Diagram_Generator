@@ -52,6 +52,9 @@ class CSVtoBlock(object):
                 self.read_csv(directory, csv_file)
 
     def construct_digraph(self, f_name):
+        """
+        MAIN block
+        """
         main_block = f_name.split('.')[0].upper()
         self.dot = Digraph(comment=main_block)
         self.dot.node('main', main_block, shape='box', fontsize='8', fixedsize='true', width='2', height='3')
@@ -61,12 +64,15 @@ class CSVtoBlock(object):
         for i, item in enumerate(self.data_[0]):
             if direction[i] == 'in':
                 self.dot.node(str(i), 'secret', style='invis')
-                self.dot.edge(str(i), 'main', xlabel=item, constraint='true')
+                self.dot.edge(str(i), 'main', xlabel=item, fontsize='7', constraint='true', arrowsize='0.5', arrowhead='empty')
             else:
                 self.dot.node(str(i), 'secret', style='invis')
-                self.dot.edge('main', str(i), xlabel=item, constraint='true')
+                self.dot.edge('main', str(i), xlabel=item, fontsize='7', constraint='true', arrowsize='0.5', arrowhead='empty')
 
     def write_dot(self):
+        """
+
+        """
         f = open('block.dot', 'wb')
         f.write(self.dot.source)
         f.close()
@@ -84,14 +90,14 @@ class CSVtoBlock(object):
         f = open('foo.dot', 'wb')
         f.write(dot.source)
         f.close()
-        g = pgv.AGraph(file='sample.dot')
+        g = pgv.AGraph(file='comp.dot')
         g.layout(prog='dot')
         g.draw('foo.pdf')
         g.close()
 
 if __name__ == '__main__':
     c = CSVtoBlock()
-    #c.boo()
+    c.boo()
     c.read_csv_dir()
     c.find_correlation()
     c.write_dot()
