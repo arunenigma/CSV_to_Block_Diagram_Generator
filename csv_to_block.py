@@ -83,6 +83,9 @@ class CSVtoBlock(object):
 
     @staticmethod
     def boo():
+        """
+        mock method
+        """
         dot = Digraph(comment='foo')
         dot.node('A', 'Apple')
         dot.node('B', 'Ball')
@@ -94,6 +97,9 @@ class CSVtoBlock(object):
         g.layout(prog='dot')
         g.draw('foo.pdf')
         g.close()
+
+    def tests(self):
+        pass
 
 if __name__ == '__main__':
     c = CSVtoBlock()
