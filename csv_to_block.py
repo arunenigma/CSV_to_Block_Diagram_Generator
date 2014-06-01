@@ -69,6 +69,25 @@ class CSVtoBlock(object):
                 self.dot.node(str(i), 'secret', style='invis')
                 self.dot.edge('main', str(i), xlabel=item, fontsize='7', constraint='true', arrowsize='0.5', arrowhead='empty')
 
+    # TODO tomorrow
+    def find_hierarchy(self):
+        """
+        stub
+        """
+        pass
+
+    def construct_subgraphs(self):
+        """
+        stub
+        """
+        pass
+
+    def pack_subgraphs(self):
+        """
+        stub
+        """
+        pass
+
     def write_dot(self):
         """
 
@@ -80,6 +99,7 @@ class CSVtoBlock(object):
         g.layout(prog='dot')
         g.draw('block.pdf')
         g.close()
+
 
     @staticmethod
     def boo():

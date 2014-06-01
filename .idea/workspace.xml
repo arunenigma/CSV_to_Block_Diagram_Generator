@@ -31,7 +31,7 @@
       <file leaf-file-name="csv_to_block.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/csv_to_block.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="12" selection-start="3023" selection-end="3023" vertical-scroll-proportion="0.77020204" vertical-offset="804" max-vertical-offset="1596">
+            <state line="76" column="12" selection-start="2409" selection-end="2409" vertical-scroll-proportion="0.088607594" vertical-offset="994" max-vertical-offset="1876">
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -521,7 +521,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/csv_to_block.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="12" selection-start="3023" selection-end="3023" vertical-scroll-proportion="0.77020204" vertical-offset="804" max-vertical-offset="1596">
+        <state line="76" column="12" selection-start="2409" selection-end="2409" vertical-scroll-proportion="0.088607594" vertical-offset="994" max-vertical-offset="1876">
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
