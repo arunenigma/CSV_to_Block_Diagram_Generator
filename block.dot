@@ -1,4 +1,4 @@
-// UART
+// uart.csv
 digraph {
 	main [label=UART fixedsize=true width=2 shape=box fontsize=8 height=3]
 	0 [label=secret style=invis]
