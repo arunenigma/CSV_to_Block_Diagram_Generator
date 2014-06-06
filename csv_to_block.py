@@ -1,8 +1,5 @@
-from graphviz import Digraph
 import pygraphviz as pgv
 from os import walk
-import simplejson
-import json
 import csv
 
 
@@ -75,28 +72,38 @@ class CSVtoBlock(object):
         MAIN block
         """
         #print main_prop
-        self.dot = pgv.AGraph(comment=main_block, directed='true', compound='true', rankdir='LR', rank='same',
-                              splines='ortho')
+        # strict=False -- allows duplicate edges but disables the ability to create invisible edges
+        self.dot = pgv.AGraph(comment=main_block, directed=True, compound=True, rankdir='LR', rank='same',
+                              splines='ortho', multiedges=True,
+                              strict=False, overlap=False)
+
         self.dot.add_node('empty_1', label='empty_1', style='invis', shape='box', fontsize='10',
                           width='1', height='1')
-
-        self.dot.add_node('fifo', label='fifo', shape='box', fontsize='10',
-                          width='2', height='2')
         self.dot.add_node('fifo_ctrl', label='fifo_ctrl', shape='box', fontsize='10',
+                          width='2', height='2')
+        self.dot.add_node('empty_mid', label='empty_2', style='invis', shape='box', fontsize='10',
+                          width='1', height='1')
+        self.dot.add_node('fifo', label='fifo', shape='box', fontsize='10',
                           width='2', height='2')
         self.dot.add_node('empty_2', label='empty_2', style='invis', shape='box', fontsize='10',
                           width='1', height='1')
 
-        self.dot.add_edge('empty_1', 'fifo', style='invis')
-        self.dot.add_edge('fifo', 'fifo_ctrl', style='invis')
-        self.dot.add_edge('fifo_ctrl', 'empty_2', style='invis')
-
+        self.dot.edge_attr['style'] = 'invis'
+        self.dot.add_edge('empty_1', 'fifo_ctrl')
+        self.dot.add_edge('fifo_ctrl', 'empty_mid')
+        self.dot.add_edge('empty_mid', 'fifo')
+        self.dot.add_edge('fifo', 'empty_2')
         direction = main_prop['Direction']
-        self.dot.subgraph(nbunch=['empty_1', 'fifo', 'fifo_ctrl', 'empty_2'], name='cluster_1', label='UART', rank='same')
+        self.dot.subgraph(nbunch=['empty_1', 'fifo_ctrl', 'empty_mid', 'fifo', 'empty_2'], name='cluster_1',
+                          label='UART',
+                          rank='same')
+
+        self.dot.edge_attr['style'] = 'filled'
         for i, item in enumerate(main_prop['Physical Name']):
             if direction[i] == 'in':
                 self.dot.add_node(str(i), style='invis')
-                self.dot.add_edge(str(i), 'empty_1', taillabel=item, lhead='cluster_1', arrowhead='normal', fontsize='8',
+                self.dot.add_edge(str(i), 'empty_1', taillabel=item, lhead='cluster_1', arrowhead='normal',
+                                  fontsize='8',
                                   penwidth='1', arrowsize=.5, weight=2., constraint='true')
             else:
                 self.dot.add_node(str(i), style='invis')
@@ -104,21 +111,51 @@ class CSVtoBlock(object):
                                   fontsize='8', penwidth='1', arrowsize=.5, weight=2., constraint='true')
         self.construct_subgraphs()
 
-    @staticmethod
-    def construct_subgraphs():
+    def construct_subgraphs(self):
         """
-        stub
+        construct subgraph blocks with their signals
         """
         #self.dot.add_subgraph(['fifo', 'fifo_ctrl'], name='s1', rank='same')
         #self.dot.graph_attr['rank'] = 'same'
-        pass
 
-    @staticmethod
-    def pack_subgraphs():
-        """
-        stub
-        """
-        pass
+        fifo_ctrl_info = self.knol_all['fifo_ctrl.csv']
+        # draw in/out edges of fifo_ctrl block using fifo_ctrl_info
+        direction = fifo_ctrl_info['Direction']
+        for i, item in enumerate(fifo_ctrl_info['Physical Name']):
+            if direction[i] == 'in':
+                if not fifo_ctrl_info['Source'][i] == 'fifo':
+                    self.dot.add_edge('empty_1', 'fifo_ctrl', taillabel=item, arrowhead='normal', fontsize='8',
+                                      penwidth='1',
+                                      arrowsize=.5, weight=2., style='filled')
+                else:
+                    self.dot.add_edge('fifo', 'fifo_ctrl', taillabel=item, arrowhead='normal', fontsize='8',
+                                      penwidth='1',
+                                      arrowsize=.5, weight=2., style='filled')
+
+            else:
+                self.dot.add_edge('fifo_ctrl', 'empty_mid', headlabel=item, arrowhead='normal', fontsize='8',
+                                  penwidth='1',
+                                  arrowsize=.5, weight=2., constraint='true')
+
+        # draw in/out edges of fifo block using fifo_info
+        fifo_info = self.knol_all['fifo.csv']
+        #print fifo_info
+        direction = fifo_info['Direction']
+        for i, item in enumerate(fifo_info['Physical Name']):
+            if direction[i] == 'in':
+                if not fifo_info['Source'][i] == 'fifo_ctrl':
+                    self.dot.add_edge('empty_mid', 'fifo', taillabel=item, arrowhead='normal', fontsize='8',
+                                      penwidth='1',
+                                      arrowsize=.5, weight=2., style='filled')
+                else:
+                    self.dot.add_edge('fifo_ctrl', 'fifo', taillabel=item, arrowhead='normal', fontsize='8',
+                                      penwidth='1',
+                                      arrowsize=.5, weight=2., style='filled')
+
+            else:
+                self.dot.add_edge('fifo', 'empty_2', headlabel=item, arrowhead='normal', fontsize='8',
+                                  penwidth='1',
+                                  arrowsize=.5, weight=2., constraint='true')
 
     def write_dot(self):
         """
@@ -133,35 +170,8 @@ class CSVtoBlock(object):
         g.draw('block.pdf')
         g.close()
 
-    @staticmethod
-    def foo():
-        """
-        mock method
-        """
-        dot = Digraph(comment='foo')
-        dot.node('A', 'Apple')
-        dot.node('B', 'Ball')
-        dot.edges(['AB'])
-        f = open('foo.dot', 'wb')
-        f.write(dot.source)
-        f.close()
-        g = pgv.AGraph(file='block_sample.dot')
-        g.layout(prog='dot')
-        g.draw('foo.pdf')
-        g.close()
-
-    @staticmethod
-    def unit_tests():
-        """
-        stub
-        """
-        pass
-
-
 if __name__ == '__main__':
     c = CSVtoBlock()
-    c.foo()
     c.read_csv_dir()
     c.hierarchy()
     c.write_dot()
-    #c.boo()
