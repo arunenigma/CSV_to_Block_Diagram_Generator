@@ -74,10 +74,37 @@ class CSVtoBlock(object):
         """
         MAIN block
         """
-        print main_prop
-        self.dot = Digraph(comment=main_block)
-        self.dot.node('main', main_block.split('.')[0].upper(), shape='box', fontsize='8', fixedsize='true', width='2', height='3')
+        #print main_prop
+        self.dot = pgv.AGraph(comment=main_block)
+        self.dot.add_node('main', label=main_block.split('.')[0].upper(), shape='box', fontsize='8', fixedsize='true',
+                          width='4', height='3')
+        self.dot.add_node('fifo', label='fifo', shape='box', fontsize='8', fixedsize='true',
+                          width='1', height='1')
+        self.dot.add_node('fifo_ctrl', label='fifo_ctrl', shape='box', fontsize='8', fixedsize='true',
+                          width='1', height='1')
+
         direction = main_prop['Direction']
+
+        for i, item in enumerate(main_prop['Physical Name']):
+            if direction[i] == 'in':
+                self.dot.add_node(str(i), style='invis')
+                self.dot.add_edge(str(i), 'main', xlabel=item, fontsize='10', constraint='true', arrowsize='10')
+            else:
+                self.dot.add_node(str(i), style='invis')
+                self.dot.add_edge('main', str(i), xlabel=item, fontsize='10', constraint='true', arrowsize='10')
+        self.construct_subgraphs()
+
+        """
+        self.dot = Digraph(comment=main_block)
+        self.dot.node('main', main_block.split('.')[0].upper(), shape='box', fontsize='8', fixedsize='true', width='4', height='3')
+
+        self.dot.node('fifo', 'fifo', shape='box', fontsize='8', fixedsize='true', width='1',
+                      height='1')
+
+        self.dot.node('fifo_ctrl', 'fifo_ctrl', shape='box', fontsize='8', fixedsize='true', width='1',
+                      height='1')
+        direction = main_prop['Direction']
+
         for i, item in enumerate(main_prop['Physical Name']):
             if direction[i] == 'in':
                 self.dot.node(str(i), 'secret', style='invis')
@@ -87,12 +114,14 @@ class CSVtoBlock(object):
                 self.dot.node(str(i), 'secret', style='invis')
                 self.dot.edge('main', str(i), xlabel=item, fontsize='7', constraint='true', arrowsize='0.5',
                               arrowhead='empty')
+        """
 
-    @staticmethod
-    def construct_subgraphs():
+    def construct_subgraphs(self):
         """
         stub
         """
+        self.dot.add_subgraph(['fifo', 'fifo_ctrl'], name='s1', rank='same')
+        self.dot.graph_attr['rank'] = 'same'
         pass
 
     @staticmethod
@@ -107,7 +136,7 @@ class CSVtoBlock(object):
 
         """
         f = open('block.dot', 'wb')
-        f.write(self.dot.source)
+        f.write(self.dot.string())
         f.close()
         g = pgv.AGraph(file='block.dot', rankdir='LR', splines='ortho')
         g.layout(prog='dot')
@@ -126,7 +155,7 @@ class CSVtoBlock(object):
         f = open('foo.dot', 'wb')
         f.write(dot.source)
         f.close()
-        g = pgv.AGraph(file='comp.dot')
+        g = pgv.AGraph(file='block_sample.dot')
         g.layout(prog='dot')
         g.draw('foo.pdf')
         g.close()
@@ -141,3 +170,4 @@ if __name__ == '__main__':
     c.read_csv_dir()
     c.hierarchy()
     c.write_dot()
+    #c.boo()

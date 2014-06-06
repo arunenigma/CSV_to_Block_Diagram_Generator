@@ -1,0 +1,28 @@
+digraph {
+    graph [fontsize=10 fontname="Palatino" compound=true rankdir=LR splines=ortho];
+    node [shape=record fontsize=10 fontname="Palatino"];
+
+    subgraph cluster_0 {
+        empty [label=secret style=invis]
+        fifo [label=fifo fixedsize=true width=1 shape=box fontsize=8 height=1]
+	    fifo_ctrl [label=fifo_ctrl fixedsize=true width=1 shape=box fontsize=8 height=1]
+	    empty [label=secret style=invis]
+        label = "UART";
+        color=black;
+    }
+
+    // Edges between nodes render fine
+    "fifo" -> "fifo_ctrl";
+
+    // Edges that directly connect one cluster to another
+    0 [label=secret style=invis]
+		0 -> fifo [fontsize=10 arrowsize=0.5 arrowhead=empty xlabel=hclk constraint=true lhead=cluster_0]
+	1 [label=secret style=invis]
+		1 -> fifo [fontsize=10 arrowsize=0.5 arrowhead=empty xlabel=hsurtclk constraint=true lhead=cluster_0]
+	2 [label=secret style=invis]
+		2 -> fifo [fontsize=10 arrowsize=0.5 arrowhead=empty xlabel=pwrite constraint=true lhead=cluster_0]
+	3 [label=secret style=invis]
+		3 -> fifo [fontsize=10 arrowsize=0.5 arrowhead=empty xlabel=paddr constraint=true lhead=cluster_0]
+	4 [label=secret style=invis]
+		fifo_ctrl -> 4 [fontsize=10 arrowsize=0.5 arrowhead=empty xlabel=out constraint=true ltail=cluster_0]
+}

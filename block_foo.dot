@@ -1,0 +1,16 @@
+// uart.csv
+digraph {
+	main [label=UART fixedsize=true width=4 shape=box fontsize=8 height=3]
+	fifo [label=fifo fixedsize=true width=1 shape=box fontsize=8 height=1]
+	fifo_ctrl [label=fifo_ctrl fixedsize=true width=1 shape=box fontsize=8 height=1]
+	0 [label=secret style=invis]
+		0 -> main [fontsize=7 arrowsize=0.5 arrowhead=empty xlabel=hclk constraint=true]
+	1 [label=secret style=invis]
+		1 -> main [fontsize=7 arrowsize=0.5 arrowhead=empty xlabel=hsurtclk constraint=true]
+	2 [label=secret style=invis]
+		2 -> main [fontsize=7 arrowsize=0.5 arrowhead=empty xlabel=pwrite constraint=true]
+	3 [label=secret style=invis]
+		3 -> main [fontsize=7 arrowsize=0.5 arrowhead=empty xlabel=paddr constraint=true]
+	4 [label=secret style=invis]
+		main -> 4 [fontsize=7 arrowsize=0.5 arrowhead=empty xlabel=out constraint=true]
+}

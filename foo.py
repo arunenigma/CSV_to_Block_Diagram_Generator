@@ -1,35 +1,39 @@
+# Kanjoya Binary Search Problem
+"""
+    Given x which is an unbounded integer > 0
+    and a method isLessThanX(int y) which takes in an arg y
+    find x
+"""
 from random import randint
 import sys
-import matplotlib.pylab as plt
-
-x = 7
 
 
-def is_less_than_x(n):
-    if n < x:
+x = randint(1, sys.maxint)
+print x
+
+
+def is_less_than_x(y):
+    if y < x:
         return True
     else:
         return False
 
-y = []
-
 
 def find_x():
-    #n = randint(0, 100)
-    n = 2
-    while n != x:
-        if is_less_than_x(n):
-            n = (n + 12) / 2
-            y.append(n)
+    global lower
+    global upper
+    lower = 1
+    upper = sys.maxint
+    y = randint(lower, upper)
+    while y != x:
+        if is_less_than_x(y):
+            lower = y
+            y = (lower + upper) / 2
+            #print y
         else:
-            n /= 2
-            y.append(n)
-    return n
+            upper = y
+            y = (lower + upper) / 2
+            #print y
+    return y
 
-
-print 'x =', find_x()
-print y
-i = range(1, len(y)+1)
-print i
-plt.plot(i, y)
-plt.show()
+print find_x()
