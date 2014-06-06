@@ -94,28 +94,6 @@ class CSVtoBlock(object):
                 self.dot.add_edge('main', str(i), xlabel=item, fontsize='10', constraint='true', arrowsize='10')
         self.construct_subgraphs()
 
-        """
-        self.dot = Digraph(comment=main_block)
-        self.dot.node('main', main_block.split('.')[0].upper(), shape='box', fontsize='8', fixedsize='true', width='4', height='3')
-
-        self.dot.node('fifo', 'fifo', shape='box', fontsize='8', fixedsize='true', width='1',
-                      height='1')
-
-        self.dot.node('fifo_ctrl', 'fifo_ctrl', shape='box', fontsize='8', fixedsize='true', width='1',
-                      height='1')
-        direction = main_prop['Direction']
-
-        for i, item in enumerate(main_prop['Physical Name']):
-            if direction[i] == 'in':
-                self.dot.node(str(i), 'secret', style='invis')
-                self.dot.edge(str(i), 'main', xlabel=item, fontsize='7', constraint='true', arrowsize='0.5',
-                              arrowhead='empty')
-            else:
-                self.dot.node(str(i), 'secret', style='invis')
-                self.dot.edge('main', str(i), xlabel=item, fontsize='7', constraint='true', arrowsize='0.5',
-                              arrowhead='empty')
-        """
-
     def construct_subgraphs(self):
         """
         stub
