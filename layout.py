@@ -6,6 +6,8 @@ class BlockDiagramLayout(object):
         self.levels = levels
         self.knol = knol
         self.dot = None
+        self.empty_left = ''
+        self.empty_right = ''
 
     def draw_layout(self):
         """
@@ -19,7 +21,7 @@ class BlockDiagramLayout(object):
                     main_block = csv_name
                     break
 
-        # main_block -> a23_core
+        # main_block -> a23_core -> Level 1
         main_prop = self.knol[main_block]
         print main_prop
         # strict=False -- allows duplicate edges but disables the ability to create invisible edges
@@ -28,31 +30,55 @@ class BlockDiagramLayout(object):
                               splines='ortho', multiedges=True,
                               strict=False, overlap=False)
         print self.levels
-        first_level_nodes = []
+        second_level_nodes = []
         for node, level in self.levels.iteritems():
-            if level == 1:
-                first_level_nodes.append(node)
+            if level == 2:
+                second_level_nodes.append(node)
 
-        n_first_level = len(first_level_nodes)
+        n_second_level = len(second_level_nodes)
+
         # create empty nodes depending on the number of nodes in the level
         # TODO
         # for now this process is manual
         # for a more generic representation, this needs to be automated
 
-        self.dot.add_node('empty_1_1', label='empty_1', style='invis', shape='box', fontsize='10',
-                          width='1', height='1')
-        self.dot.add_node(first_level_nodes[0], label=first_level_nodes[0], shape='box', fontsize='10',
-                          width='2', height='2')
-        self.dot.add_node('empty_1_2', label='empty_2', style='invis', shape='box', fontsize='10',
-                          width='1', height='1')
+        bunch = []
+        for n in range(n_second_level):
+            if n == 0:
+                self.empty_left = '2' + str(n) + 'left'
+                self.empty_right = '2' + str(n) + 'right'
+                self.dot.add_node(self.empty_left, label=self.empty_left, style='invis', shape='box', fontsize='10',
+                                  width='1', height='1')
+                self.dot.add_node(second_level_nodes[n], label=second_level_nodes[n], shape='box', fontsize='10',
+                                  width='2', height='2')
+                self.dot.add_node(self.empty_right, label=self.empty_right, style='invis', shape='box', fontsize='10',
+                                  width='1', height='1')
 
-        self.dot.edge_attr['style'] = 'invis'
-        self.dot.add_edge('empty_1_1', first_level_nodes[0])
-        self.dot.add_edge(first_level_nodes[0], 'empty_1_2')
+                self.dot.edge_attr['style'] = 'invis'
+                self.dot.add_edge(self.empty_left, second_level_nodes[n])
+                self.dot.add_edge(second_level_nodes[n], self.empty_right)
+                bunch.append(self.empty_left)
+                bunch.append(second_level_nodes[n])
+                bunch.append(self.empty_right)
+            else:
+
+                self.dot.add_node(second_level_nodes[n], label=second_level_nodes[n], shape='box', fontsize='10',
+                                  width='2', height='2')
+                self.dot.edge_attr['style'] = 'invis'
+                self.dot.add_edge(self.empty_right, second_level_nodes[n])
+                self.empty_right = '2' + str(n) + 'right'
+                self.dot.add_node(self.empty_right, label=self.empty_right, style='invis', shape='box', fontsize='10',
+                                  width='1', height='1')
+
+                self.dot.edge_attr['style'] = 'invis'
+                self.dot.add_edge(second_level_nodes[n], self.empty_right)
+                bunch.append(second_level_nodes[n])
+                bunch.append(self.empty_right)
+
         direction = main_prop['Direction']
 
-        # subgraph
-        self.dot.subgraph(nbunch=['empty_1_1', 'fifo_ctrl', 'empty_1_2'], name='cluster_1',
+        # subgraphs
+        self.dot.subgraph(nbunch=bunch, name='cluster_1',
                           label=main_block,
                           rank='same')
 
@@ -60,12 +86,12 @@ class BlockDiagramLayout(object):
         for i, item in enumerate(main_prop['Signal Name']):
             if direction[i] == 'in':
                 self.dot.add_node(str(i), style='invis')
-                self.dot.add_edge(str(i), 'empty_1_1', taillabel=item, lhead='cluster_1', arrowhead='normal',
+                self.dot.add_edge(str(i), bunch[0], taillabel=item, lhead='cluster_1', arrowhead='normal',
                                   fontsize='8',
                                   penwidth='1', arrowsize=.5, weight=2., constraint='true')
             else:
                 self.dot.add_node(str(i), style='invis')
-                self.dot.add_edge('empty_1_2', str(i), headlabel=item, ltail='cluster_1', arrowhead='normal',
+                self.dot.add_edge(bunch[-1], str(i), headlabel=item, ltail='cluster_1', arrowhead='normal',
                                   fontsize='8', penwidth='1', arrowsize=.5, weight=2., constraint='true')
 
         #self.construct_subgraphs_level_3()
