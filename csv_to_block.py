@@ -31,10 +31,10 @@ class CSVtoBlock(object):
             else:
                 self.data.append(row)
 
-        l = len(self.data)
+        cols = len(self.data[0])
         cnt = 0
 
-        while not cnt > l - 1:
+        while not cnt > cols - 1:
             temp = []
             for row in self.data:
                 temp.append(row[cnt])
