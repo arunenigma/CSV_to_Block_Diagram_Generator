@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="df3edbc5-ad93-4bb4-9468-4e270285c947" name="Default" comment="" />
+    <list default="true" id="7b0384f5-23e5-40eb-b654-025e9e257f56" name="Default" comment="" />
     <ignored path="csv_to_block.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,9 +12,8 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/csv_to_block$foo.coverage" NAME="foo Coverage Results" MODIFIED="1402004076129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/csv_to_block$csv_to_block.coverage" NAME="csv_to_block Coverage Results" MODIFIED="1402004486490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/csv_to_block$boo.coverage" NAME="boo Coverage Results" MODIFIED="1401510494624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/csv_to_block$html_demo.coverage" NAME="html_demo Coverage Results" MODIFIED="1404849638011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/csv_to_block$layout_.coverage" NAME="layout_ Coverage Results" MODIFIED="1404687029539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -28,19 +27,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="signal.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/signal.py">
+      <file leaf-file-name="html_demo.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html_demo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="12" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="360">
+            <state line="23" column="13" selection-start="992" selection-end="992" vertical-scroll-proportion="0.0" vertical-offset="322" max-vertical-offset="406">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="block.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/block.py">
+      <file leaf-file-name="layout_final.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/layout_final.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="12" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="120">
+            <state line="196" column="70" selection-start="10161" selection-end="10161" vertical-scroll-proportion="0.6276463" vertical-offset="2240" max-vertical-offset="5810">
               <folding />
             </state>
           </provider>
@@ -49,49 +48,7 @@
       <file leaf-file-name="run.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="5" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="675">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="read_csv.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/read_csv.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="41" selection-start="668" selection-end="668" vertical-scroll-proportion="0.0" vertical-offset="22" max-vertical-offset="825">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/layout.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="39" selection-start="1612" selection-end="1612" vertical-scroll-proportion="-0.47204968" vertical-offset="1055" max-vertical-offset="2475">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="a23_alu.csv" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/csv_2/a23_alu.csv">
-          <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fifo.csv" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/csv/fifo.csv">
-          <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
+            <state line="38" column="22" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.0" vertical-offset="532" max-vertical-offset="616">
               <folding />
             </state>
           </provider>
@@ -107,27 +64,14 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/uart.csv" />
-        <option value="$PROJECT_DIR$/fifo_2.csv" />
-        <option value="$PROJECT_DIR$/boo.py" />
-        <option value="$PROJECT_DIR$/sample.dot" />
-        <option value="$PROJECT_DIR$/comp.dot" />
-        <option value="$PROJECT_DIR$/csv/fifo_1.csv" />
-        <option value="$PROJECT_DIR$/csv/fifo_2.csv" />
-        <option value="$PROJECT_DIR$/csv/fifo.csv" />
-        <option value="$PROJECT_DIR$/csv/fifo_ctrl.csv" />
-        <option value="$PROJECT_DIR$/csv/uart.csv" />
-        <option value="$PROJECT_DIR$/block.dot" />
-        <option value="$PROJECT_DIR$/foo.py" />
-        <option value="$PROJECT_DIR$/block_foo.dot" />
-        <option value="$PROJECT_DIR$/block_sample.dot" />
-        <option value="$PROJECT_DIR$/block_template.py" />
-        <option value="$PROJECT_DIR$/block.py" />
-        <option value="$PROJECT_DIR$/hierarchy.py" />
-        <option value="$PROJECT_DIR$/csv_to_block.py" />
-        <option value="$PROJECT_DIR$/read_csv.py" />
-        <option value="$PROJECT_DIR$/run.py" />
+        <option value="$PROJECT_DIR$/layout_.py" />
         <option value="$PROJECT_DIR$/layout.py" />
+        <option value="$PROJECT_DIR$/html_demo.py" />
+        <option value="$PROJECT_DIR$/goo.py" />
+        <option value="$PROJECT_DIR$/layout_2.py" />
+        <option value="$PROJECT_DIR$/run.py" />
+        <option value="$PROJECT_DIR$/layout_old.py" />
+        <option value="$PROJECT_DIR$/layout_final.py" />
       </list>
     </option>
   </component>
@@ -189,20 +133,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="csv_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="csv_to_block" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="csv_to_block" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="csv" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -213,23 +143,21 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/PyCharm_projs" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="true" />
     <property name="recentsLimit" value="5" />
-    <property name="SearchEverywhereHistory" value="_" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings />
     </option>
   </component>
-  <component name="RunManager" selected="Python.csv_to_block">
-    <configuration default="false" name="boo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.html_demo">
+    <configuration default="false" name="layout_" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -242,13 +170,13 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="csv_to_block" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/boo.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/layout_.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="foo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="html_demo" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -261,7 +189,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="csv_to_block" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/foo.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/html_demo.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
@@ -351,6 +279,9 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -372,9 +303,6 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -417,43 +345,169 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="csv_to_block" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="csv_to_block" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/csv_to_block.py" />
-      <option name="PARAMETERS" value="" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
-    <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="Python.csv_to_block" />
-      <item index="1" class="java.lang.String" itemvalue="Python.boo" />
-      <item index="2" class="java.lang.String" itemvalue="Python.foo" />
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Python.layout_" />
+      <item index="1" class="java.lang.String" itemvalue="Python.html_demo" />
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.foo" />
-        <item index="1" class="java.lang.String" itemvalue="Python.boo" />
+        <item index="0" class="java.lang.String" itemvalue="Python.html_demo" />
+        <item index="1" class="java.lang.String" itemvalue="Python.layout_" />
       </list>
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="StatisticsApplicationUsages">
+    <group name="run-configuration-type">
+      <project id="deva_website" values="Python.DjangoServer" />
+      <project id="pybin" values="tests.Unittests" />
+      <project id="decipher" values="PythonConfigurationType" />
+      <project id="csv_to_block" values="PythonConfigurationType" />
+    </group>
+    <group name="module type">
+      <project id="evolutionary_algorithms" values="PYTHON_MODULE" />
+      <project id="deva_website" values="PYTHON_MODULE" />
+      <project id="kivy" values="PYTHON_MODULE" />
+      <project id="logistic_regression" values="PYTHON_MODULE" />
+      <project id="regression" values="PYTHON_MODULE" />
+      <project id="jsbin" values="PYTHON_MODULE" />
+      <project id="pyalgos_bin" values="PYTHON_MODULE" />
+      <project id="ThinkStats" values="PYTHON_MODULE" />
+      <project id="hashtag_reco" values="PYTHON_MODULE" />
+      <project id="yelp" values="PYTHON_MODULE" />
+      <project id="crawler" values="PYTHON_MODULE" />
+      <project id="amzn" values="PYTHON_MODULE" />
+      <project id="pytesting" values="PYTHON_MODULE" />
+      <project id="py_demo" values="PYTHON_MODULE" />
+      <project id="ROC" values="PYTHON_MODULE" />
+      <project id="search" values="PYTHON_MODULE" />
+      <project id="pybin" values="PYTHON_MODULE" />
+      <project id="backend" values="PYTHON_MODULE" />
+      <project id="decipher" values="PYTHON_MODULE" />
+      <project id="csv_to_block" values="PYTHON_MODULE" />
+    </group>
+    <group name="vcs">
+      <project id="deva_website" values="Git" />
+      <project id="backend" values="Git" />
+      <project id="search" values="Git" />
+      <project id="decipher" values="Git" />
+    </group>
+    <group name="frameworks">
+      <project id="deva_website" values="django" />
+    </group>
+    <group name="py-packages">
+      <project id="search" values="nltk,Django,lxml" />
+    </group>
+    <group name="file-type">
+      <project id="evolutionary_algorithms" values="XML,Python,UNKNOWN" />
+      <project id="deva_website" values="CSS,Python,Markdown,Images,UNKNOWN,Native,SQLite Database,HTML,com/webschik/doT,JavaScript,XML,PLAIN_TEXT" />
+      <project id="kivy" values="UNKNOWN,Python,XML,PLAIN_TEXT" />
+      <project id="logistic_regression" values="UNKNOWN,PLAIN_TEXT,Native,Python,XML" />
+      <project id="regression" values="UNKNOWN,XML" />
+      <project id="jsbin" values="UNKNOWN,XML,HTML,JavaScript" />
+      <project id="pyalgos_bin" values="HTML,UNKNOWN,PLAIN_TEXT,XML,Python" />
+      <project id="ThinkStats" values="UNKNOWN,XML,Python" />
+      <project id="hashtag_reco" values="PLAIN_TEXT,XML,Python,UNKNOWN" />
+      <project id="yelp" values="UNKNOWN,Python,XML" />
+      <project id="crawler" values="PLAIN_TEXT,UNKNOWN,Python,Markdown,XML" />
+      <project id="amzn" values="UNKNOWN,Python,XML" />
+      <project id="pytesting" values="Python,PLAIN_TEXT,UNKNOWN,XML" />
+      <project id="py_demo" values="UNKNOWN,Python,XML" />
+      <project id="ROC" values="Native,PLAIN_TEXT,Python,UNKNOWN,XML" />
+      <project id="search" values="Python,PLAIN_TEXT,Images,Markdown,HTML,com/webschik/doT,XML,JavaScript,Native,UNKNOWN,CSS" />
+      <project id="pybin" values="PLAIN_TEXT,Python,XML,UNKNOWN" />
+      <project id="backend" values="Images,Native,Python,UNKNOWN,ReST,CSS,XML,com/webschik/doT,HTML,PLAIN_TEXT,C++" />
+      <project id="decipher" values="XML,UNKNOWN" />
+      <project id="csv_to_block" values="Markdown,PLAIN_TEXT,Native,com/webschik/doT,UNKNOWN,XML,Python" />
+    </group>
+    <group name="run-configuration-type-temp">
+      <project id="evolutionary_algorithms" values="PythonConfigurationType" />
+      <project id="deva_website" values="PythonConfigurationType" />
+      <project id="kivy" values="PythonConfigurationType" />
+      <project id="logistic_regression" values="PythonConfigurationType" />
+      <project id="regression" values="PythonConfigurationType" />
+      <project id="pyalgos_bin" values="PythonConfigurationType" />
+      <project id="yelp" values="PythonConfigurationType" />
+      <project id="crawler" values="tests.Unittests" />
+      <project id="py_demo" values="PythonConfigurationType" />
+      <project id="ROC" values="PythonConfigurationType" />
+      <project id="pybin" values="PythonConfigurationType" />
+      <project id="search" values="PythonConfigurationType" />
+      <project id="decipher" values="PythonConfigurationType" />
+      <project id="csv_to_block" values="PythonConfigurationType" />
+    </group>
+    <group name="JavaScript versions">
+      <project id="evolutionary_algorithms" values="DEFAULT" />
+      <project id="deva_website" values="DEFAULT" />
+      <project id="kivy" values="DEFAULT" />
+      <project id="logistic_regression" values="DEFAULT" />
+      <project id="regression" values="DEFAULT" />
+      <project id="jsbin" values="DEFAULT" />
+      <project id="pyalgos_bin" values="DEFAULT" />
+      <project id="ThinkStats" values="DEFAULT" />
+      <project id="hashtag_reco" values="DEFAULT" />
+      <project id="yelp" values="DEFAULT" />
+      <project id="crawler" values="DEFAULT" />
+      <project id="amzn" values="DEFAULT" />
+      <project id="pytesting" values="DEFAULT" />
+      <project id="py_demo" values="DEFAULT" />
+      <project id="ROC" values="DEFAULT" />
+      <project id="search" values="DEFAULT" />
+      <project id="pybin" values="DEFAULT" />
+      <project id="backend" values="DEFAULT" />
+      <project id="decipher" values="DEFAULT" />
+      <project id="csv_to_block" values="DEFAULT" />
+    </group>
+    <group name="javaScript Scope Usages">
+      <project id="evolutionary_algorithms" values="Project,Project" />
+      <project id="deva_website" values="Project,Project" />
+      <project id="kivy" values="Project,Project" />
+      <project id="logistic_regression" values="Project,Project" />
+      <project id="regression" values="Project,Project" />
+      <project id="jsbin" values="Project,Project" />
+      <project id="pyalgos_bin" values="Project,Project" />
+      <project id="ThinkStats" values="Project,Project" />
+      <project id="hashtag_reco" values="Project,Project" />
+      <project id="yelp" values="Project,Project" />
+      <project id="crawler" values="Project,Project" />
+      <project id="amzn" values="Project,Project" />
+      <project id="pytesting" values="Project,Project" />
+      <project id="py_demo" values="Project,Project" />
+      <project id="ROC" values="Project,Project" />
+      <project id="search" values="Project,Project" />
+      <project id="pybin" values="Project,Project" />
+      <project id="backend" values="Project,Project" />
+      <project id="decipher" values="Project,Project" />
+      <project id="csv_to_block" values="Project,Project" />
+    </group>
+    <group name="py-interpreter">
+      <project id="evolutionary_algorithms" values="Python 2.7.5" />
+      <project id="deva_website" values="Python 2.7.5" />
+      <project id="kivy" values="Python 2.7.5" />
+      <project id="logistic_regression" values="Python 2.7.5" />
+      <project id="regression" values="Python 2.7.5" />
+      <project id="jsbin" values="Python 2.7.5" />
+      <project id="pyalgos_bin" values="Python 2.7.5" />
+      <project id="ThinkStats" values="Python 2.7.5" />
+      <project id="hashtag_reco" values="Python 2.7.5" />
+      <project id="yelp" values="Python 2.7.5" />
+      <project id="crawler" values="Python 2.7.5" />
+      <project id="amzn" values="Python 2.7.5" />
+      <project id="pytesting" values="Python 2.7.5" />
+      <project id="py_demo" values="Python 2.7.5" />
+      <project id="ROC" values="Python 2.7.5" />
+      <project id="search" values="Python 2.7.5" />
+      <project id="pybin" values="Python 2.7.5" />
+      <project id="backend" values="Python 2.7.5" />
+      <project id="decipher" values="Python 2.7.5" />
+      <project id="csv_to_block" values="Python 2.7.5" />
+    </group>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="df3edbc5-ad93-4bb4-9468-4e270285c947" name="Default" comment="" />
-      <created>1401508199966</created>
-      <updated>1401508199966</updated>
+      <changelist id="7b0384f5-23e5-40eb-b654-025e9e257f56" name="Default" comment="" />
+      <created>1404334759386</created>
+      <updated>1404334759386</updated>
     </task>
     <servers />
   </component>
@@ -464,13 +518,13 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18597998" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19670959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33645955" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17233294" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -480,6 +534,14 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
+  </component>
+  <component name="UsageTrigger">
+    <counts>
+      <entry feature="CreateFile.CreateFileAction" count="12" />
+      <entry feature="NewDirectoryProjectAction.Empty project" count="8" />
+      <entry feature="execute.PythonConfigurationType.Run" count="917" />
+      <entry feature="execute.tests.Run" count="2" />
+    </counts>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -495,353 +557,298 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="1" />
-    </breakpoint-manager>
+    <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/csv/fifo.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/read_csv.py">
+    <entry file="file://$PROJECT_DIR$/hierarchy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="36" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="270">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv_to_block.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="170" column="17" selection-start="7036" selection-end="7232" vertical-scroll-proportion="0.0" vertical-offset="2550" max-vertical-offset="2730" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/fifo_ctrl.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/uart.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/signal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="12" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="360">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/block.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="12" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="120">
-          <folding />
-        </state>
+        <state line="29" column="11" selection-start="800" selection-end="800" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1200" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="4" selection-start="661" selection-end="661" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="420">
+        <state line="40" column="4" selection-start="1229" selection-end="1229" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="795">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hierarchy.py">
+    <entry file="file://$PROJECT_DIR$/layout_old.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="27" selection-start="1629" selection-end="1629" vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="840" />
+        <state line="117" column="0" selection-start="5197" selection-end="5197" vertical-scroll-proportion="0.0" vertical-offset="1755" max-vertical-offset="3735" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/layout.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="12" selection-start="70" selection-end="70" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="120">
+        <state line="12" column="35" selection-start="0" selection-end="15823" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="4290" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html_demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="13" selection-start="878" selection-end="878" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="435">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/levels.dot">
+    <entry file="file://$PROJECT_DIR$/layout_2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/read_csv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="36" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="270">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv_to_block.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="78" selection-start="6683" selection-end="6683" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2730" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/block.dot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="21" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="3150" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/fifo.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/fifo_ctrl.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/uart.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv_to_block.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="78" selection-start="6683" selection-end="6683" vertical-scroll-proportion="0.0" vertical-offset="2128" max-vertical-offset="2548" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/block.dot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="2940" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/fifo.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="154" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/fifo_ctrl.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="154" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/uart.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="168" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv_to_block.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="41" selection-start="4252" selection-end="4252" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2198" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/block.dot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="1" selection-start="820" selection-end="820" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="294" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/fifo.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="154" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/uart.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="168" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv_to_block.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="41" selection-start="4252" selection-end="4252" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2198" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/block.dot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="14" selection-start="0" selection-end="820" vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="294" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/fifo.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="154" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/uart.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="168" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv_to_block.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="64" selection-start="1633" selection-end="1633" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="2044" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/block.dot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="266" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/uart.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="154" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv_to_block.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="33" selection-start="2785" selection-end="2785" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1512" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/block.dot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="266" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/uart.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="154" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/block.dot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="21" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0" vertical-offset="2135" max-vertical-offset="2940" />
+        <state line="34" column="0" selection-start="1206" selection-end="1206" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="4260" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/block.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="12" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/block_new.dot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="34350" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout_.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="13" selection-start="1157" selection-end="1328" vertical-scroll-proportion="0.0" vertical-offset="301" max-vertical-offset="960" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hierarchy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="26" selection-start="2575" selection-end="2575" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1200" />
+        <state line="29" column="11" selection-start="800" selection-end="800" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1200" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/levels.dot">
+    <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="885" />
+        <state line="40" column="4" selection-start="1229" selection-end="1229" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="795">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/csv_2/a23_barrel_shift.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195" />
+    <entry file="file://$PROJECT_DIR$/layout_old.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="117" column="0" selection-start="5197" selection-end="5197" vertical-scroll-proportion="0.0" vertical-offset="1305" max-vertical-offset="3735" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/csv_2/a23_coprocessor.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345" />
+    <entry file="file://$PROJECT_DIR$/layout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="35" selection-start="0" selection-end="15823" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="4290" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/csv/fifo_ctrl.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="154" />
+    <entry file="file://$PROJECT_DIR$/html_demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="13" selection-start="878" selection-end="878" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="435">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/csv/uart.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+    <entry file="file://$PROJECT_DIR$/layout_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="0" selection-start="1206" selection-end="1206" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="4260" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/block.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/block_new.dot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="34350" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout_.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="13" selection-start="1157" selection-end="1328" vertical-scroll-proportion="0.0" vertical-offset="301" max-vertical-offset="960" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hierarchy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="11" selection-start="800" selection-end="800" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1200" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="4" selection-start="1203" selection-end="1223" vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout_old.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="180" column="11" selection-start="8557" selection-end="8557" vertical-scroll-proportion="0.0" vertical-offset="2700" max-vertical-offset="3735" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="255" column="102" selection-start="14590" selection-end="14590" vertical-scroll-proportion="0.0" vertical-offset="3556" max-vertical-offset="4245" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout_.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="23" selection-start="1153" selection-end="1153" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="960" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hierarchy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="11" selection-start="800" selection-end="800" vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="1200" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="15" selection-start="1116" selection-end="1116" vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="750">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout_old.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="181" column="8" selection-start="8566" selection-end="11130" vertical-scroll-proportion="0.0" vertical-offset="2490" max-vertical-offset="3735" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="206" column="34" selection-start="10300" selection-end="10300" vertical-scroll-proportion="0.0" vertical-offset="676" max-vertical-offset="3255" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout_.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="60" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="840" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hierarchy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="11" selection-start="800" selection-end="800" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1200" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout_old.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="29" selection-start="0" selection-end="12046" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="3735" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="155" column="85" selection-start="7867" selection-end="7867" vertical-scroll-proportion="0.0" vertical-offset="1790" max-vertical-offset="2595" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout_.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="526" selection-end="526" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="765" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/block.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="659" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/goo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="805" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hierarchy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="23" selection-start="129" selection-end="129" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1120" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout_.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="727" selection-end="727" vertical-scroll-proportion="0.4" vertical-offset="0" max-vertical-offset="896" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/block_new.dot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="38" selection-end="38" vertical-scroll-proportion="0.0" vertical-offset="28" max-vertical-offset="45108" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="47" selection-start="1466" selection-end="1466" vertical-scroll-proportion="-3.3055556" vertical-offset="3164" max-vertical-offset="3990" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csv_2/a23_core.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="779" />
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="154" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csv_2/macCSV">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="783" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/csv_2/a23_alu.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="29" selection-start="396" selection-end="396" vertical-scroll-proportion="-3.7692308" vertical-offset="0" max-vertical-offset="182" />
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csv/fifo.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="757" />
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csv/fifo_ctrl.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="757" />
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csv/uart.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="757" />
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csv_2/a23_execute.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="854" />
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html_demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="13" selection-start="992" selection-end="992" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="406">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="134" column="16" selection-start="5995" selection-end="5995" vertical-scroll-proportion="2.336239" vertical-offset="0" max-vertical-offset="2520" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout_old.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="0" selection-start="4301" selection-end="4301" vertical-scroll-proportion="0.34190232" vertical-offset="1134" max-vertical-offset="3486" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout_final.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="196" column="70" selection-start="10161" selection-end="10161" vertical-scroll-proportion="0.6276463" vertical-offset="2240" max-vertical-offset="5810">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="5" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv_to_block.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="44" selection-start="3268" selection-end="3268" vertical-scroll-proportion="0.21544209" vertical-offset="1147" max-vertical-offset="2730" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/signal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="12" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/read_csv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="41" selection-start="668" selection-end="668" vertical-scroll-proportion="0.0" vertical-offset="22" max-vertical-offset="825">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/fifo.csv">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="39" selection-start="1612" selection-end="1612" vertical-scroll-proportion="-0.47204968" vertical-offset="1055" max-vertical-offset="2475">
+        <state line="38" column="22" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="616">
           <folding />
         </state>
       </provider>

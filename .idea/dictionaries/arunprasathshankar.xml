@@ -4,16 +4,24 @@
       <w>arrowsize</w>
       <w>fixedsize</w>
       <w>fontsize</w>
+      <w>graphviz</w>
       <w>hier</w>
       <w>invis</w>
       <w>lhead</w>
+      <w>lightpink</w>
       <w>ltail</w>
+      <w>neato</w>
       <w>ortho</w>
       <w>paddr</w>
       <w>palantino</w>
+      <w>peachpuff</w>
+      <w>penwidth</w>
       <w>rankdir</w>
+      <w>skyblue</w>
       <w>subgraph</w>
+      <w>subgraphing</w>
       <w>subgraphs</w>
+      <w>taillabel</w>
       <w>uart</w>
     </words>
   </dictionary>

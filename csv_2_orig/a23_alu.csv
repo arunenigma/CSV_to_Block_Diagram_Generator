@@ -1,0 +1,8 @@
+Signal Name,Field,Width,Direction,Source,Active,Type,Logical Name,Constraints,Comments
+i_status_bits_carry ,,1,in,a23_execute,,,,,
+i_function          ,,9,in,a23_execute,,,,,
+i_a_in              ,,32,in,a23_register_bank,,,,,
+i_b_in              ,,32,in,a23_barrel_shift,,,,,
+i_barrel_shift_carry,,1,in,a23_barrel_shift,,,,,
+o_out               ,,32,out,alu_out,,,,,
+o_flags             ,,4,out,alu_flags,,,,,

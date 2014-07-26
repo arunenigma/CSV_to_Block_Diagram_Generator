@@ -10,6 +10,7 @@ class Hierarchy(object):
         self.levels = {}
         self.graph = None
         self.graph_ = {}
+        self.sorted_graph = {}
 
     def collect_first_row(self, csv_name, csv_obj):
         """
@@ -53,12 +54,11 @@ class Hierarchy(object):
                 self.graph_[node] = []
 
         # sort the neighbors based on their neighbor count
-        sorted_graph = {}
+
         for node, neighbors in self.graph_.iteritems():
             neighbors.sort(key=itemgetter(1))
             neighbors = [neighbor[0] for neighbor in neighbors]
-            sorted_graph[node] = neighbors
-        #print sorted_graph
+            self.sorted_graph[node] = neighbors
 
         # Breadth first traversal/Level wise traversal
         top = 'system'
@@ -67,9 +67,9 @@ class Hierarchy(object):
         while queue:
             vertex = queue.pop(0)
             self.levels[vertex] = level
-            if sorted_graph[vertex] and vertex not in visited:
+            if self.sorted_graph[vertex] and vertex not in visited:
                 visited.append(vertex)
-                for node in sorted_graph[vertex]:
+                for node in self.sorted_graph[vertex]:
                     if node not in visited:
                         queue.append(node)
                 level += 1
