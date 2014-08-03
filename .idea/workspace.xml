@@ -27,10 +27,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="layout.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/layout.py">
+      <file leaf-file-name="html_demo.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html_demo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="55" selection-start="3970" selection-end="3970" vertical-scroll-proportion="0.5603985" vertical-offset="945" max-vertical-offset="6420">
+            <state line="28" column="24" selection-start="979" selection-end="979" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hierarchy.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hierarchy.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="23" selection-start="129" selection-end="129" vertical-scroll-proportion="0.01867995" vertical-offset="45" max-vertical-offset="1155">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="foo.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/foo.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="8" selection-start="149" selection-end="174" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
               <folding />
             </state>
           </provider>
@@ -76,12 +94,13 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/layout_.py" />
-        <option value="$PROJECT_DIR$/html_demo.py" />
         <option value="$PROJECT_DIR$/goo.py" />
         <option value="$PROJECT_DIR$/layout_2.py" />
         <option value="$PROJECT_DIR$/layout_old.py" />
         <option value="$PROJECT_DIR$/layout_final.py" />
         <option value="$PROJECT_DIR$/run.py" />
+        <option value="$PROJECT_DIR$/foo.html" />
+        <option value="$PROJECT_DIR$/html_demo.py" />
         <option value="$PROJECT_DIR$/layout.py" />
       </list>
     </option>
@@ -643,11 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hierarchy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="23" selection-start="129" selection-end="129" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1120" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/block.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="12" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
@@ -671,9 +685,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/foo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="8" selection-start="149" selection-end="174" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/layout.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="55" selection-start="3970" selection-end="3970" vertical-scroll-proportion="0.5603985" vertical-offset="945" max-vertical-offset="6420">
+        <state line="192" column="100" selection-start="10273" selection-end="10273" vertical-scroll-proportion="-4.0622663" vertical-offset="6142" max-vertical-offset="6945">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html_demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="24" selection-start="979" selection-end="979" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hierarchy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="23" selection-start="129" selection-end="129" vertical-scroll-proportion="0.01867995" vertical-offset="45" max-vertical-offset="1155">
           <folding />
         </state>
       </provider>

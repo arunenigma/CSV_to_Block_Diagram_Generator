@@ -2,12 +2,14 @@
   <dictionary name="arunprasathshankar">
     <words>
       <w>arrowsize</w>
+      <w>colspan</w>
       <w>fixedsize</w>
       <w>fontsize</w>
       <w>graphviz</w>
       <w>hier</w>
       <w>invis</w>
       <w>lhead</w>
+      <w>lightcyan</w>
       <w>lightpink</w>
       <w>ltail</w>
       <w>neato</w>
@@ -17,6 +19,7 @@
       <w>peachpuff</w>
       <w>penwidth</w>
       <w>rankdir</w>
+      <w>rowspan</w>
       <w>skyblue</w>
       <w>subgraph</w>
       <w>subgraphing</w>

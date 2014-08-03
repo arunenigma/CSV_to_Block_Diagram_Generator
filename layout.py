@@ -92,6 +92,13 @@ class BlockDiagramLayout(object):
                                   width='3', height='10')
                 self.dot.add_node(second_level_nodes[n], label=second_level_nodes[n], shape='box', fontsize='60',
                                   width='10', height='70', style='filled', color='peachpuff')
+                label = """<<TABLE BGCOLOR="white" WIDTH="200"> \
+                    <TR><TD COLSPAN="1" ROWSPAN="1"><TABLE BGCOLOR="lightcyan"> \
+                    <TR><TD BGCOLOR="white">%s</TD></TR> \
+                    </TABLE></TD></TR></TABLE>>"""
+                label_values = [second_level_nodes[n]]
+                label = label % tuple(label_values)
+                self.dot.get_node(second_level_nodes[n]).attr.update({'shape': 'plaintext', 'label': label})
                 self.dot.add_node(self.empty_right, label=self.empty_right, style='invis', shape='box', fontsize='10',
                                   width='3', height='10')
                 self.dot.edge_attr['style'] = 'invis'
@@ -103,6 +110,13 @@ class BlockDiagramLayout(object):
             elif n == 1:  # decode node
                 self.dot.add_node(second_level_nodes[n], label=second_level_nodes[n], shape='box', fontsize='60',
                                   width='10', height='50', style='filled', color='peachpuff')
+                label = """<<TABLE BGCOLOR="white" WIDTH="200"> \
+                    <TR><TD COLSPAN="1" ROWSPAN="1"><TABLE BGCOLOR="lightcyan"> \
+                    <TR><TD BGCOLOR="white">%s</TD></TR> \
+                    </TABLE></TD></TR></TABLE>>"""
+                label_values = [second_level_nodes[n]]
+                label = label % tuple(label_values)
+                self.dot.get_node(second_level_nodes[n]).attr.update({'shape': 'plaintext', 'label': label})
                 self.dot.edge_attr['style'] = 'invis'
                 self.dot.add_edge(self.empty_right, second_level_nodes[n])
                 self.empty_right = '2' + str(n) + 'right'
@@ -115,6 +129,20 @@ class BlockDiagramLayout(object):
             elif n == 2:  # execute node
                 self.dot.add_node(second_level_nodes[n], label=second_level_nodes[n], shape='box', fontsize='60',
                                   width='10', height='70', style='filled', color='peachpuff')
+                label = """<<TABLE BGCOLOR="white" WIDTH="200"> \
+                        <TR><TD COLSPAN="1" ROWSPAN="1"><TABLE BGCOLOR="lightcyan"> \
+                        <TR><TD BGCOLOR="white">%s</TD></TR> \
+                        <TR><TD>%s</TD></TR> \
+                        <TR><TD>%s</TD></TR> \
+                        <TR><TD>%s</TD></TR> \
+                        <TR><TD>%s</TD></TR> \
+                        </TABLE></TD></TR></TABLE>>"""
+                label_values = [second_level_nodes[n]]
+                for node in third_level_nodes:
+                    label_values.append(node)
+                label = label % tuple(label_values)
+
+                self.dot.get_node(second_level_nodes[n]).attr.update({'shape': 'plaintext', 'label': label})
                 self.dot.add_edge(self.empty_right, second_level_nodes[n])
                 empty_right_top = '2' + str(n) + 'right_top'
                 empty_right_down = '2' + str(n) + 'right_down'
@@ -156,6 +184,13 @@ class BlockDiagramLayout(object):
         self.dot.add_node(self.empty_left, label=self.empty_left, style='invis', shape='point', fontsize='10')
         self.dot.add_node(second_level_nodes[n], label=second_level_nodes[n], shape='box', fontsize='60',
                           width='7', height='22', style='filled', color='skyblue')
+        label = """<<TABLE BGCOLOR="white" WIDTH="200"> \
+            <TR><TD COLSPAN="1" ROWSPAN="1"><TABLE BGCOLOR="lightcyan"> \
+            <TR><TD BGCOLOR="white">%s</TD></TR> \
+            </TABLE></TD></TR></TABLE>>"""
+        label_values = [second_level_nodes[n]]
+        label = label % tuple(label_values)
+        self.dot.get_node(second_level_nodes[n]).attr.update({'shape': 'plaintext', 'label': label})
         #self.dot.get_node(second_level_nodes[n]).attr.update({'pin': True})  # doesn't work for some reason
         self.dot.add_node(self.empty_right, label=self.empty_right, style='invis', shape='point', fontsize='10')
 
