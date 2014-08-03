@@ -1,7 +1,8 @@
-from layout_final import BlockDiagramLayout
+from layout import BlockDiagramLayout
 from hierarchy import Hierarchy
 from read_csv import ReadCSV
 from os import walk
+import argparse
 import sys
 
 if __name__ == '__main__':
@@ -19,7 +20,6 @@ if __name__ == '__main__':
 
     hierarchy_edges = hier.hierarchy
     hierarchy = hier.sorted_graph
-    #print hierarchy_edges
     hier.construct_graph()
     hier.bfs_edges()
     levels = hier.levels
@@ -33,7 +33,6 @@ if __name__ == '__main__':
                 print e.message
 
     knol = read_csv.knol_all
-    #print knol
     layout = BlockDiagramLayout(levels, knol, hierarchy)
     layout.draw_layout()
     layout.write_dot()

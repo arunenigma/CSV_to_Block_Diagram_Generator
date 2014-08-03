@@ -1,5 +1,7 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 import pygraphviz as pgv
-from random import randint
 
 
 class BlockDiagramLayout(object):
@@ -7,38 +9,37 @@ class BlockDiagramLayout(object):
         self.levels = levels
         self.knol = knol
         self.dot = None
-        self.empty_left = None
-        self.empty_right = None
+        self.empty_left = ''
+        self.empty_right = ''
         self.hier = hier
-        self.subgraphs_level_2 = []
-        self.subgraphs_level_2_obj = {}
-        self.subgraphs_level_2_obj_proj = {}
-        self.main_block = None
-        self.top_level = None
 
     def draw_layout(self):
         """
         construct_digraph for main block --> system
         MAIN block
         """
-        self.main_block = ''
+        main_block = ''
         for csv_name, properties in self.knol.iteritems():
             for prop, items in properties.iteritems():
                 if prop == 'Source' and items[0] == 'system':
-                    self.main_block = csv_name
+                    main_block = csv_name
                     break
 
-        self.main_block = self.main_block.split('.')[0]
-        self.dot = pgv.AGraph(comment=self.main_block, directed=True, compound=True,
+        # main_block -> a23_core -> Level 1
+        main_prop = self.knol[main_block]
+        #print main_prop
+        # strict=False -- allows duplicate edges but disables the ability to create invisible edges
+        main_block = main_block.split('.')[0]
+        self.dot = pgv.AGraph(comment=main_block, directed=True, compound=True, rank='same',
                               splines='ortho', multiedges=True,
-                              strict=False, overlap=False, rankdir='LR', ranksep='2', size="325, 125!", nodesep='0.5')
-
-        # testing html table as node label
-        self.dot.add_node('foo', shape='box', label='<>')
+                              strict=False, overlap=False, rankdir='LR', ranksep='.5', ratio='1', page="11,11",
+                              size="20.0, 20.0", margin="1.0")
+        self.dot.graph_attr['bb'] = "-100, -100, 600, 600"
         second_level_nodes = []
         for node, level in self.levels.iteritems():
             if level == 2:
                 second_level_nodes.append(node)
+        n_second_level = len(second_level_nodes)
 
         third_level_nodes = []
         for node, level in self.levels.iteritems():
@@ -54,228 +55,369 @@ class BlockDiagramLayout(object):
                     else:
                         third_level_hier.append([parent, None])
 
-        # subgraphing level 2 nodes
+        # subgraphing level 2 nodes into main block
         bunch = []
-        empty_node = 'empty_node' + self.main_block
-        self.dot.add_node(empty_node, label=self.empty_left, style='invis')
-        bunch.append(empty_node)
+
+        # restrict number of nodes in a row to 3 for etiquette purpose
+        #row_nodes = 0
+
+        # order of nodes -> fetch, decode and execute
+        order = {'fetch': 0, 'decode': 1, 'execute': 2}
+        sorted_second_level_nodes = [None, None, None, 'a23_coprocessor']
+        for node in second_level_nodes:
+            for key, value in order.iteritems():
+                if key in node:
+                    sorted_second_level_nodes[order[key]] = node
+        second_level_nodes = sorted_second_level_nodes
+
+        # Dummy Node for creating extra space at the top
+        self.empty_left = '2_top_' + 'left'
+        self.empty_right = '2_top_' + 'right'
+        self.dot.add_node(self.empty_left, label=self.empty_left, style='invis', shape='point', fontsize='10')
+        self.dot.add_node('dummy_top', label='dummy_top', shape='point', fontsize='10', style='invis')
+        self.dot.add_node(self.empty_right, label=self.empty_right, style='invis', shape='point', fontsize='10')
+
+        # self.dot.edge_attr['style'] = 'invis'  # already in effect
+        self.dot.add_edge(self.empty_left, 'dummy_top')
+        self.dot.add_edge('dummy_top', self.empty_right)
+        bunch.append(self.empty_left)
+        bunch.append('dummy_top')
+        bunch.append(self.empty_right)
+
+        for n in range(n_second_level):
+            if n == 0:  # fetch node
+                self.empty_left = '2' + str(n) + 'left'
+                self.empty_right = '2' + str(n) + 'right'
+                self.dot.add_node(self.empty_left, label=self.empty_left, style='invis', shape='box', fontsize='10',
+                                  width='3', height='10')
+                self.dot.add_node(second_level_nodes[n], label=second_level_nodes[n], shape='box', fontsize='60',
+                                  width='10', height='70', style='filled', color='peachpuff')
+                self.dot.add_node(self.empty_right, label=self.empty_right, style='invis', shape='box', fontsize='10',
+                                  width='3', height='10')
+                self.dot.edge_attr['style'] = 'invis'
+                self.dot.add_edge(self.empty_left, second_level_nodes[n])
+                self.dot.add_edge(second_level_nodes[n], self.empty_right)
+                bunch.append(self.empty_left)
+                bunch.append(second_level_nodes[n])
+                bunch.append(self.empty_right)
+            elif n == 1:  # decode node
+                self.dot.add_node(second_level_nodes[n], label=second_level_nodes[n], shape='box', fontsize='60',
+                                  width='10', height='50', style='filled', color='peachpuff')
+                self.dot.edge_attr['style'] = 'invis'
+                self.dot.add_edge(self.empty_right, second_level_nodes[n])
+                self.empty_right = '2' + str(n) + 'right'
+                self.dot.add_node(self.empty_right, label=self.empty_right, style='invis', shape='box', fontsize='10',
+                                  width='3', height='10')
+                self.dot.add_edge(second_level_nodes[n], self.empty_right)
+                bunch.append(second_level_nodes[n])
+                bunch.append(self.empty_right)
+
+            elif n == 2:  # execute node
+                self.dot.add_node(second_level_nodes[n], label=second_level_nodes[n], shape='box', fontsize='60',
+                                  width='10', height='70', style='filled', color='peachpuff')
+                self.dot.add_edge(self.empty_right, second_level_nodes[n])
+                empty_right_top = '2' + str(n) + 'right_top'
+                empty_right_down = '2' + str(n) + 'right_down'
+                empty_last = '2' + str(n) + 'empty_last'
+                self.dot.add_node(empty_right_top, label=empty_right_top, style='invis', shape='box', fontsize='10',
+                                  width='1', height='20')
+                self.dot.add_node(empty_right_down, label=empty_right_down, style='invis', shape='box', fontsize='10',
+                                  width='1', height='20')
+                self.dot.add_node(empty_last, label=empty_last, style='invis', shape='box', fontsize='10',
+                                  width='1', height='20')
+                self.dot.add_edge(second_level_nodes[n], empty_right_top, style='invis')
+                self.dot.add_edge(second_level_nodes[n], empty_right_down, style='invis')
+                self.dot.add_edge(empty_right_down, empty_last, style='invis')
+                bunch.append(second_level_nodes[n])
+                bunch.append(empty_right_top)
+                bunch.append(empty_right_down)
+                bunch.append(empty_last)
+
+        # Dummy Node for creating extra space at the mid
+        self.empty_left = '2_mid' + 'left'
+        self.empty_right = '2_mid' + 'right'
+        self.dot.add_node(self.empty_left, label=self.empty_left, style='invis', shape='point', fontsize='10')
+        self.dot.add_node('dummy_mid', label='dummy_mid', shape='point', fontsize='10', style='invis')
+        self.dot.add_node(self.empty_right, label=self.empty_right, style='invis', shape='point', fontsize='10')
+
+        # self.dot.edge_attr['style'] = 'invis'  # already in effect
+        self.dot.add_edge(self.empty_left, 'dummy_mid')
+        self.dot.add_edge('dummy_mid', self.empty_right)
+        bunch.append(self.empty_left)
+        bunch.append('dummy_mid')
+        bunch.append(self.empty_right)
+
+        # TODO Logic implementation of customizing layout
+        # there isn't a lot of freedom when it comes to laying out nodes with Graphviz
+
+        n = 3  # last node (coprocessor)
+        self.empty_left = '2' + str(n) + 'left'
+        self.empty_right = '2' + str(n) + 'right'
+        self.dot.add_node(self.empty_left, label=self.empty_left, style='invis', shape='point', fontsize='10')
+        self.dot.add_node(second_level_nodes[n], label=second_level_nodes[n], shape='box', fontsize='60',
+                          width='7', height='22', style='filled', color='skyblue')
+        #self.dot.get_node(second_level_nodes[n]).attr.update({'pin': True})  # doesn't work for some reason
+        self.dot.add_node(self.empty_right, label=self.empty_right, style='invis', shape='point', fontsize='10')
+
+        # self.dot.edge_attr['style'] = 'invis'  # already in effect
+        self.dot.add_edge(self.empty_left, second_level_nodes[n])
+        self.dot.add_edge(second_level_nodes[n], self.empty_right)
+        bunch.append(self.empty_left)
+        bunch.append(second_level_nodes[n])
+        bunch.append(self.empty_right)
+
+        # super hack
+        # node placement heavily relies on the number of edges between the nodes
+        # hack is to add max dummy nodes between 'dummy_mid', 'a23_coprocessor' so that coprocessor remains at bottom
+        for i in range(100):
+            self.dot.add_edge('dummy_mid', 'a23_coprocessor', xlabel=str(i) + '_hack', style='invis')
+
+        # Dummy Node for creating extra space at the bottom
+        self.empty_left = '2_bottom' + 'left'
+        self.empty_right = '2_bottom' + 'right'
+        self.dot.add_node(self.empty_left, label=self.empty_left, style='invis', shape='point', fontsize='10')
+        self.dot.add_node('dummy_bottom', label='dummy_bottom', shape='point', fontsize='10', style='invis')
+        self.dot.add_node(self.empty_right, label=self.empty_right, style='invis', shape='point', fontsize='10',
+                          width='3', height='3')
+
+        # self.dot.edge_attr['style'] = 'invis'  # already in effect
+        self.dot.add_edge(self.empty_left, 'dummy_bottom')
+        self.dot.add_edge('dummy_bottom', self.empty_right)
+        bunch.append(self.empty_left)
+        bunch.append('dummy_bottom')
+        bunch.append(self.empty_right)
+        direction = main_prop['Direction']
+
         # subgraph
-        self.top_level = self.dot.subgraph(nbunch=bunch, name='cluster_' + self.main_block,
-                                           label=self.main_block)
+        self.dot.subgraph(nbunch=bunch, name='cluster_1',
+                          label=main_block)
 
-        # ____________________________________________________________________________________________________________
+        self.dot.edge_attr['style'] = 'filled'
+        # drawing signals in and out of source
+        print bunch
+        for i, item in enumerate(main_prop['Signal Name']):
+            if direction[i] == 'out':
+                # TODO need automation here | find math logic later
+                self.dot.add_node(str(i), style='invis')
 
-        print third_level_hier
-        for parent_children in third_level_hier:
-            bunch = []
-            bunch_proj = []
-            if parent_children[1] is None:
-                empty_node = parent_children[0] + '_empty'
-                empty_node_proj = parent_children[0] + '_empty_proj'
+                self.dot.add_edge(bunch[11], str(i), headlabel=item, ltail='cluster_1',
+                                  taillabel=item.replace('i_', 'o_') + '(src)', arrowhead='normal',
+                                  fontsize='20', penwidth='1', arrowsize=2, weight=2.)
+            else:
+                self.dot.add_node(str(i), style='invis')
+                self.dot.add_edge(str(i), bunch[3], taillabel=item, lhead='cluster_1', arrowhead='normal',
+                                  fontsize='20',
+                                  penwidth='1', arrowsize=2, weight=2.)
 
-                self.top_level.add_node(empty_node, label=empty_node, style='invis', shape='box', fontsize='10')
-                bunch.append(empty_node)
-                self.top_level.add_node(empty_node_proj, label=empty_node_proj, style='invis', shape='box',
-                                        fontsize='10')
-                bunch.append(empty_node)
-                bunch_proj.append(empty_node_proj)
-                s_graph_proj = self.top_level.subgraph(bunch_proj, name='cluster_proj_' + parent_children[0], color='invis')
-                s_graph = self.top_level.subgraph(bunch, name='cluster_' + parent_children[0], label=parent_children[0])
-                self.subgraphs_level_2.append('cluster_' + parent_children[0])
-                self.subgraphs_level_2_obj[parent_children[0]] = s_graph
-                self.subgraphs_level_2_obj_proj[parent_children[0]] = s_graph_proj
+        self.construct_subgraphs_level_2(second_level_nodes, bunch, main_block)
 
-            if parent_children[1]:  # if the node has children
-                empty_node_proj = parent_children[0] + '_empty_proj'
-                for n, node in enumerate(parent_children[1]):
-                    self.empty_left = '3' + str(n) + 'left'
-                    self.empty_right = '3' + str(n) + 'right'
-                    self.top_level.add_node(self.empty_left, label=self.empty_left, style='invis', shape='box',
-                                            fontsize='10', width='2', height='5')
-                    self.top_level.add_node(parent_children[1][n], label=parent_children[1][n], shape='box',
-                                            fontsize='10',
-                                            width='2', height='5')
-                    self.top_level.add_node(self.empty_right, label=self.empty_right, style='invis', shape='box',
-                                            fontsize='10', width='2', height='5')
-
-                    self.dot.edge_attr['style'] = 'invis'
-                    self.top_level.add_edge(self.empty_left, parent_children[1][n])
-                    self.top_level.add_edge(parent_children[1][n], self.empty_right)
-                    bunch.append(self.empty_left)
-                    bunch.append(parent_children[1][n])
-                    bunch.append(self.empty_right)
-                bunch_proj.append(empty_node_proj)
-                s_graph_proj = self.top_level.subgraph(bunch_proj, name='cluster_proj_' + parent_children[0],
-                                                       color='invis')
-                # subgraph
-                s_graph = self.top_level.subgraph(bunch, name='cluster_' + parent_children[0], label=parent_children[0])
-                self.subgraphs_level_2.append('cluster_' + parent_children[0])
-                self.subgraphs_level_2_obj[parent_children[0]] = s_graph
-                self.subgraphs_level_2_obj_proj[parent_children[0]] = s_graph_proj
-
-                self.draw_signals_third_level(parent_children[0], bunch, parent_children[1])
-
-    def draw_signals_third_level(self, parent, bunch, nodes):
+    def construct_subgraphs_level_2(self, nodes, bunch, main_block):
         """
-            signals are btw nodes
+            construct subgraph blocks with their signals
         """
         for i, node in enumerate(nodes):
-            node_info = self.knol[node + '.csv']
-            # draw in/out edges
-            direction = node_info['Direction']
-            for j, item in enumerate(node_info['Signal Name']):
-                if direction[j] == 'in':
-                    if node_info['Source'][j]:
-                        if not node_info['Source'][j] == parent:
-                            self.dot.add_edge(node_info['Source'][j], node, headlabel=item, arrowhead='normal',
-                                              fontsize='8',
+            print bunch
+            if not i == 3:  # not co-processor node (second row node)
+                node_info = self.knol[node + '.csv']
+                # draw in/out edges
+                direction = node_info['Direction']
+                for j, item in enumerate(node_info['Signal Name']):
+                    if direction[j] == 'in':  # incoming signals to nodes
+                        if node_info['Source'][j] == main_block:
+                            if i == 0:
+                                self.dot.add_edge(bunch[3], node, taillabel=item, arrowhead='normal', fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='filled')
+                                # adding invisible edges to space them out evenly
+                                self.dot.add_edge(bunch[3], node, taillabel=item + str(j), arrowhead='normal',
+                                                  fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='invis')
+                                self.dot.add_edge(bunch[3], node, taillabel=item + str(100 + j), arrowhead='normal',
+                                                  fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='invis')
+                                self.dot.add_edge(bunch[3], node, taillabel=item + str(200 + j), arrowhead='normal',
+                                                  fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='invis')
+                                self.dot.add_edge(bunch[3], node, taillabel=item + str(300 + j), arrowhead='normal',
+                                                  fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='invis')
+                            elif i == 1:
+                                self.dot.add_edge(bunch[5], node, taillabel=item, arrowhead='normal', fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='filled')
+                                # adding invisible edges to space them out evenly
+                                self.dot.add_edge(bunch[5], node, taillabel=item + str(j), arrowhead='normal',
+                                                  fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='invis')
+                                self.dot.add_edge(bunch[5], node, taillabel=item + str(100 + j), arrowhead='normal',
+                                                  fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='invis')
+                                self.dot.add_edge(bunch[5], node, taillabel=item + str(200 + j), arrowhead='normal',
+                                                  fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='invis')
+                                self.dot.add_edge(bunch[5], node, taillabel=item + str(300 + j), arrowhead='normal',
+                                                  fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='invis')
+                            elif i == 2:
+                                self.dot.add_edge(bunch[7], node, taillabel=item, arrowhead='normal', fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='filled')
+                                # adding invisible edges to space them out evenly
+                                self.dot.add_edge(bunch[7], node, taillabel=item + str(j), arrowhead='normal',
+                                                  fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='invis')
+                                self.dot.add_edge(bunch[7], node, taillabel=item + str(100 + j), arrowhead='normal',
+                                                  fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='invis')
+                                self.dot.add_edge(bunch[7], node, taillabel=item + str(200 + j), arrowhead='normal',
+                                                  fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='invis')
+                        else:  # incoming signals from neighbor nodes
+
+                            if node_info['Source'][j]:
+                                self.dot.add_edge(node_info['Source'][j], node, headlabel=item,
+                                                  taillabel=item.replace('i_', 'o_'), arrowhead='normal',
+                                                  fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='filled')
+
+                                # adding invisible edges to space them out evenly
+                                self.dot.add_edge(node_info['Source'][j], node, taillabel=item + str(j),
+                                                  arrowhead='normal',
+                                                  fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='invis')
+
+                                self.dot.add_edge(node_info['Source'][j], node, taillabel=item + str(100 + j),
+                                                  arrowhead='normal',
+                                                  fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='invis')
+                                self.dot.add_edge(node_info['Source'][j], node, taillabel=item + str(200 + j),
+                                                  arrowhead='normal',
+                                                  fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='invis')
+
+                    else:  # outgoing signals from nodes to source
+
+                        if node_info['Source'][j]:
+                            self.dot.add_edge(node, node_info['Source'][j], headlabel=item,
+                                              taillabel=item.replace('i_', 'o_'), arrowhead='normal',
+                                              fontsize='20',
                                               penwidth='1',
-                                              arrowsize=.5, weight=2., style='filled')
+                                              arrowsize=2, weight=2., style='filled')
 
                             # adding invisible edges to space them out evenly
-                            self.dot.add_edge(node_info['Source'][j], node, taillabel=item + str(100 + j),
+                            self.dot.add_edge(node, node_info['Source'][j], taillabel=item + str(j),
                                               arrowhead='normal',
-                                              fontsize='8',
+                                              fontsize='20',
                                               penwidth='1',
-                                              arrowsize=.5, weight=2., style='invis')
-                            self.dot.add_edge(node_info['Source'][j], node, taillabel=item + str(200 + j),
+                                              arrowsize=2, weight=2., style='invis')
+
+                            self.dot.add_edge(node, node_info['Source'][j], taillabel=item + str(100 + j),
                                               arrowhead='normal',
-                                              fontsize='8',
+                                              fontsize='20',
                                               penwidth='1',
-                                              arrowsize=.5, weight=2., style='invis')
-                            self.dot.add_edge(node_info['Source'][j], node, taillabel=item + str(300 + j),
+                                              arrowsize=2, weight=2., style='invis')
+                            self.dot.add_edge(node, node_info['Source'][j], taillabel=item + str(200 + j),
                                               arrowhead='normal',
-                                              fontsize='8',
+                                              fontsize='20',
                                               penwidth='1',
-                                              arrowsize=.5, weight=2., style='invis')
-                        else:
-                            for idx, b_node in enumerate(bunch):
-                                if b_node == node:
-                                    self.dot.add_edge(bunch[idx - 1], node, headlabel=item, arrowhead='normal',
-                                                      fontsize='8',
-                                                      penwidth='1',
-                                                      arrowsize=.5, weight=2., style='filled')
-                                    # adding invisible edges to space them out evenly
-                                    self.dot.add_edge(bunch[idx - 1], node, taillabel=item + str(100 + j),
-                                                      arrowhead='normal',
-                                                      fontsize='8',
-                                                      penwidth='1',
-                                                      arrowsize=.5, weight=2., style='invis')
-                                    self.dot.add_edge(bunch[idx - 1], node, taillabel=item + str(200 + j),
-                                                      arrowhead='normal',
-                                                      fontsize='8',
-                                                      penwidth='1',
-                                                      arrowsize=.5, weight=2., style='invis')
-                                    self.dot.add_edge(bunch[idx - 1], node, taillabel=item + str(300 + j),
-                                                      arrowhead='normal',
-                                                      fontsize='8',
-                                                      penwidth='1',
-                                                      arrowsize=.5, weight=2., style='invis')
-                else:
-                    for idx, b_node in enumerate(bunch):
-                        if b_node == node:
-                            self.dot.add_edge(node, bunch[idx + 1], headlabel=item, arrowhead='normal',
-                                              fontsize='8',
+                                              arrowsize=2, weight=2., style='invis')
+
+            else:  # co-processor node
+                node_info = self.knol[node + '.csv']
+                # draw in/out edges
+                direction = node_info['Direction']
+                for j, item in enumerate(node_info['Signal Name']):
+                    if direction[j] == 'in':
+                        if node_info['Source'][j] == main_block:
+                            self.dot.add_edge(node, bunch[-i], taillabel=item, arrowhead='normal', fontsize='20',
                                               penwidth='1',
-                                              arrowsize=.5, weight=2., style='filled')
+                                              arrowsize=2, weight=2., style='filled')
                             # adding invisible edges to space them out evenly
-                            self.dot.add_edge(node, bunch[idx + 1], taillabel=item + str(100 + j),
+                            self.dot.add_edge(node, bunch[-i], taillabel=item + str(j), arrowhead='normal',
+                                              fontsize='20',
+                                              penwidth='1',
+                                              arrowsize=2, weight=2., style='invis')
+                            self.dot.add_edge(node, bunch[-i], taillabel=item + str(100 + j), arrowhead='normal',
+                                              fontsize='20',
+                                              penwidth='1',
+                                              arrowsize=2, weight=2., style='invis')
+                            self.dot.add_edge(node, bunch[-i], taillabel=item + str(200 + j), arrowhead='normal',
+                                              fontsize='20',
+                                              penwidth='1',
+                                              arrowsize=2, weight=2., style='invis')
+
+                        else:  # incoming signals to coprocessor form neighbor nodes
+                            if node_info['Source'][j]:
+                                print node_info['Source'][j], node
+                                self.dot.add_edge(node_info['Source'][j], node, headlabel=item, arrowhead='normal',
+                                                  fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='filled')
+
+                                # adding invisible edges to space them out evenly
+                                self.dot.add_edge(node_info['Source'][j], node, taillabel=item + str(j),
+                                                  arrowhead='normal',
+                                                  fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='invis')
+
+                                self.dot.add_edge(node_info['Source'][j], node, taillabel=item + str(100 + j),
+                                                  arrowhead='normal',
+                                                  fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='invis')
+                                self.dot.add_edge(node_info['Source'][j], node, taillabel=item + str(200 + j),
+                                                  arrowhead='normal',
+                                                  fontsize='20',
+                                                  penwidth='1',
+                                                  arrowsize=2, weight=2., style='invis')
+
+                    else:  # out signals from coprocessor
+                        if node_info['Source'][j]:
+                            self.dot.add_edge(node, node_info['Source'][j], headlabel=item,
+                                              taillabel=item.replace('i_', 'o_'), arrowhead='normal',
+                                              fontsize='20',
+                                              penwidth='1',
+                                              arrowsize=2, weight=2., style='filled')
+
+                            # adding invisible edges to space them out evenly
+                            self.dot.add_edge(node, node_info['Source'][j], taillabel=item + str(j),
                                               arrowhead='normal',
-                                              fontsize='8',
+                                              fontsize='20',
                                               penwidth='1',
-                                              arrowsize=.5, weight=2., style='invis')
-                            self.dot.add_edge(node, bunch[idx + 1], taillabel=item + str(200 + j),
+                                              arrowsize=2, weight=2., style='invis')
+
+                            self.dot.add_edge(node, node_info['Source'][j], taillabel=item + str(100 + j),
                                               arrowhead='normal',
-                                              fontsize='8',
+                                              fontsize='20',
                                               penwidth='1',
-                                              arrowsize=.5, weight=2., style='invis')
-                            self.dot.add_edge(node, bunch[idx + 1], taillabel=item + str(300 + j),
+                                              arrowsize=2, weight=2., style='invis')
+                            self.dot.add_edge(node, node_info['Source'][j], taillabel=item + str(200 + j),
                                               arrowhead='normal',
-                                              fontsize='8',
+                                              fontsize='20',
                                               penwidth='1',
-                                              arrowsize=.5, weight=2., style='invis')
-
-    def subgraph_lr(self):
-        """
-        this method tries to align subgraphs in LR fashion
-        """
-        print self.subgraphs_level_2_obj.keys()
-        print
-        print
-        print self.subgraphs_level_2_obj_proj.keys()
-
-        pivot_nodes = []
-        for i, sub_g in enumerate(self.subgraphs_level_2):
-            node = sub_g.split('_')[1] + '_' + sub_g.split('_')[2]
-            sub_graph_curr_proj = self.subgraphs_level_2_obj_proj[node]
-            sub_graph_curr = self.subgraphs_level_2_obj[node]
-            sub_graph_curr_proj.add_node(node + '_pivot_proj', style='invis')
-            sub_graph_curr.add_node(node + '_pivot', style='invis')
-            pivot_nodes.append(node + '_pivot_proj')
-            pivot_nodes.append(node + '_pivot')
-
-        # draw invisible edges btw the pivots of subgraphs and hope to see them aligned
-        for i in xrange(len(pivot_nodes) - 1):
-            current_item, next_item = pivot_nodes[i], pivot_nodes[i + 1]
-            print current_item, next_item
-            if '_proj' in current_item and not '_proj' in next_item:
-                current_item_cluster = 'cluster_proj_' + current_item.replace('_pivot_proj', '')
-                next_item_cluster = 'cluster_' + next_item.replace('_pivot', '')
-                self.dot.add_edge(current_item, next_item, ltail=current_item_cluster,
-                                  lhead=next_item_cluster, style='invis')
-
-            if not '_proj' in current_item and 'proj' in next_item:
-                current_item_cluster = 'cluster_' + current_item.replace('_pivot', '')
-                next_item_cluster = 'cluster_proj_' + next_item.replace('_pivot_proj', '')
-                self.dot.add_edge(current_item, next_item, ltail=current_item_cluster,
-                                  lhead=next_item_cluster, style='invis')
-
-    def draw_signals_second_level(self):
-        """
-        signals are btw subgraphs so following a different approach
-        works only if number of signals are less (<20)
-        gets messy for large number of signals
-        """
-        for i, sub_g in enumerate(self.subgraphs_level_2):
-
-            node = sub_g.split('_')[1] + '_' + sub_g.split('_')[2]
-            sub_graph_curr = self.subgraphs_level_2_obj[node]
-            node_info = self.knol[node + '.csv']
-            # draw in/out edges
-            direction = node_info['Direction']
-            for j, item in enumerate(node_info['Signal Name']):
-                print 'Item->', item
-                if direction[j] == 'in' and j < 10:  # current version only works for < 20 signals
-                    if node_info['Source'][j]:
-                        if not node_info['Source'][j] == self.main_block:
-                            sub_graph_other = self.subgraphs_level_2_obj[node_info['Source'][j]]
-                            sub_graph_curr.add_node(item + '_curr', style='invis', shape='point')
-                            sub_graph_other.add_node(item + '_other', style='invis', shape='point')
-                            self.dot.add_edge(item + '_curr', item + '_other',
-                                              lhead='cluster_' + node_info['Source'][j],
-                                              ltail=sub_g, headlabel=item, arrowhead='normal',
-                                              fontsize='8',
-                                              penwidth='1',
-                                              arrowsize=.5, weight=2., style='filled', constraint=True)
-                        else:
-                            """
-                            sub_graph_curr.add_node(item + '_orig', style='invis', shape='point')
-                            self.subgraphs_level_2_obj_proj[node].add_node(item + '_proj', style='invis',
-                                                                           shape='point')
-                            sub_g_proj = sub_g.replace('cluster', 'cluster_proj')
-                            self.dot.add_edge(item + '_proj', item + '_orig', ltail=sub_g_proj, lhead=sub_g, headlabel=item, arrowhead='normal',
-                                              fontsize='8',
-                                              penwidth='1',
-                                              arrowsize=.5, weight=2., style='filled', constraint=False)
-                            """
-                else:
-                    pass
+                                              arrowsize=2, weight=2., style='invis')
 
     def write_dot(self):
-        f = open('block_new.dot', 'wb')
+        f = open('block_diag.dot', 'wb')
         f.write(self.dot.string())
         f.close()
-        g = pgv.AGraph(file='block_new.dot')
+        g = pgv.AGraph(file='block_diag.dot')
         g.layout(prog='dot')
-        g.draw('block_new.pdf')
+        g.draw('block_diag.pdf')
         g.close()

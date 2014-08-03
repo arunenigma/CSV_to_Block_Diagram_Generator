@@ -1,8 +1,0 @@
-Signal Name,Field,Width,Direction,Source,Active,Type,Logical Name,Constraints,Comments
-i_in            ,,32,in,a23_execute,,,,,
-i_carry_in      ,,1,in,a23_execute,,,,,
-i_shift_amount  ,,8,in,a23_execute,,,,,
-i_shift_imm_zero,,1,in,a23_execute,,,,,
-i_function      ,,2,in,a23_execute,,,,,
-o_out           ,,32,out,,,,,,
-o_carry_out     ,,1,out,,,,,,

@@ -27,19 +27,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="html_demo.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html_demo.py">
+      <file leaf-file-name="layout.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/layout.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="13" selection-start="992" selection-end="992" vertical-scroll-proportion="0.0" vertical-offset="322" max-vertical-offset="406">
+            <state line="93" column="55" selection-start="3970" selection-end="3970" vertical-scroll-proportion="0.5603985" vertical-offset="945" max-vertical-offset="6420">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout_final.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/layout_final.py">
+      <file leaf-file-name="block.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/block.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="196" column="70" selection-start="10161" selection-end="10161" vertical-scroll-proportion="0.6276463" vertical-offset="2240" max-vertical-offset="5810">
+            <state line="2" column="12" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signal.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/signal.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
               <folding />
             </state>
           </provider>
@@ -48,8 +57,10 @@
       <file leaf-file-name="run.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="22" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.0" vertical-offset="532" max-vertical-offset="616">
-              <folding />
+            <state line="21" column="33" selection-start="691" selection-end="691" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,13 +76,13 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/layout_.py" />
-        <option value="$PROJECT_DIR$/layout.py" />
         <option value="$PROJECT_DIR$/html_demo.py" />
         <option value="$PROJECT_DIR$/goo.py" />
         <option value="$PROJECT_DIR$/layout_2.py" />
-        <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/layout_old.py" />
         <option value="$PROJECT_DIR$/layout_final.py" />
+        <option value="$PROJECT_DIR$/run.py" />
+        <option value="$PROJECT_DIR$/layout.py" />
       </list>
     </option>
   </component>
@@ -120,20 +131,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="csv_to_block" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="csv_to_block" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="csv_to_block" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="csv" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -279,9 +276,6 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
-      <method />
-    </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -303,6 +297,9 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -513,14 +510,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19670959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20529328" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -560,53 +557,20 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hierarchy.py">
+    <entry file="file://$PROJECT_DIR$/layout.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="11" selection-start="800" selection-end="800" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1200" />
+        <state line="407" column="28" selection-start="24662" selection-end="24662" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6225">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="4" selection-start="1229" selection-end="1229" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="795">
-          <folding />
+        <state line="21" column="33" selection-start="691" selection-end="691" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="645">
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout_old.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="0" selection-start="5197" selection-end="5197" vertical-scroll-proportion="0.0" vertical-offset="1755" max-vertical-offset="3735" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="35" selection-start="0" selection-end="15823" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="4290" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html_demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="878" selection-end="878" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="435">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout_2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1206" selection-end="1206" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="4260" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/block.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/block_new.dot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="34350" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout_.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="13" selection-start="1157" selection-end="1328" vertical-scroll-proportion="0.0" vertical-offset="301" max-vertical-offset="960" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hierarchy.py">
@@ -617,45 +581,24 @@
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="4" selection-start="1229" selection-end="1229" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="795">
-          <folding />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layout_old.py">
+    <entry file="file://$PROJECT_DIR$/hierarchy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="0" selection-start="5197" selection-end="5197" vertical-scroll-proportion="0.0" vertical-offset="1305" max-vertical-offset="3735" />
+        <state line="29" column="11" selection-start="800" selection-end="800" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1200" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layout.py">
+    <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="35" selection-start="0" selection-end="15823" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="4290" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html_demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="878" selection-end="878" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="435">
-          <folding />
+        <state line="40" column="4" selection-start="1229" selection-end="1229" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="795">
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout_2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1206" selection-end="1206" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="4260" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/block.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/block_new.dot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="34350" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout_.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="13" selection-start="1157" selection-end="1328" vertical-scroll-proportion="0.0" vertical-offset="301" max-vertical-offset="960" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hierarchy.py">
@@ -666,23 +609,10 @@
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="4" selection-start="1203" selection-end="1223" vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="780">
-          <folding />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout_old.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="180" column="11" selection-start="8557" selection-end="8557" vertical-scroll-proportion="0.0" vertical-offset="2700" max-vertical-offset="3735" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="255" column="102" selection-start="14590" selection-end="14590" vertical-scroll-proportion="0.0" vertical-offset="3556" max-vertical-offset="4245" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout_.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="23" selection-start="1153" selection-end="1153" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="960" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hierarchy.py">
@@ -693,23 +623,10 @@
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="15" selection-start="1116" selection-end="1116" vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="750">
-          <folding />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout_old.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="181" column="8" selection-start="8566" selection-end="11130" vertical-scroll-proportion="0.0" vertical-offset="2490" max-vertical-offset="3735" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="206" column="34" selection-start="10300" selection-end="10300" vertical-scroll-proportion="0.0" vertical-offset="676" max-vertical-offset="3255" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout_.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="60" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="840" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hierarchy.py">
@@ -720,33 +637,10 @@
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
-          <folding />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout_old.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="29" selection-start="0" selection-end="12046" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="3735" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="155" column="85" selection-start="7867" selection-end="7867" vertical-scroll-proportion="0.0" vertical-offset="1790" max-vertical-offset="2595" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout_.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="526" selection-end="526" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="765" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/block.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="659" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/goo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="805" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hierarchy.py">
@@ -754,101 +648,32 @@
         <state line="7" column="23" selection-start="129" selection-end="129" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1120" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layout_.py">
+    <entry file="file://$PROJECT_DIR$/block.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="727" selection-end="727" vertical-scroll-proportion="0.4" vertical-offset="0" max-vertical-offset="896" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/block_new.dot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="38" selection-end="38" vertical-scroll-proportion="0.0" vertical-offset="28" max-vertical-offset="45108" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="47" selection-start="1466" selection-end="1466" vertical-scroll-proportion="-3.3055556" vertical-offset="3164" max-vertical-offset="3990" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv_2/a23_core.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="779" />
-      </provider>
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv_2/macCSV">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="783" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv_2/a23_alu.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="29" selection-start="396" selection-end="396" vertical-scroll-proportion="-3.7692308" vertical-offset="0" max-vertical-offset="182" />
-      </provider>
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/fifo.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="757" />
-      </provider>
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/fifo_ctrl.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="757" />
-      </provider>
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv/uart.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="757" />
-      </provider>
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv_2/a23_execute.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="854" />
-      </provider>
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html_demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="13" selection-start="992" selection-end="992" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="406">
+        <state line="2" column="12" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layout_2.py">
+    <entry file="file://$PROJECT_DIR$/signal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="16" selection-start="5995" selection-end="5995" vertical-scroll-proportion="2.336239" vertical-offset="0" max-vertical-offset="2520" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout_old.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="0" selection-start="4301" selection-end="4301" vertical-scroll-proportion="0.34190232" vertical-offset="1134" max-vertical-offset="3486" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout_final.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="196" column="70" selection-start="10161" selection-end="10161" vertical-scroll-proportion="0.6276463" vertical-offset="2240" max-vertical-offset="5810">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="803">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="22" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="616">
+        <state line="21" column="33" selection-start="691" selection-end="691" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="55" selection-start="3970" selection-end="3970" vertical-scroll-proportion="0.5603985" vertical-offset="945" max-vertical-offset="6420">
           <folding />
         </state>
       </provider>
