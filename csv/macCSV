@@ -1,7 +1,0 @@
-######
-#!/bin/sh
-for filename in *.csv
-do
-         echo $filename
-                  perl -pi -e 's//\n/g' "$filename"
-                  done

@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import pygraphviz as pgv
+import shutil
+import os
 
 
 class BlockDiagramLayout(object):
@@ -12,6 +14,18 @@ class BlockDiagramLayout(object):
         self.empty_left = ''
         self.empty_right = ''
         self.hier = hier
+        
+        # create a directory for block diagrams
+        self.block_out_dir = './block_diagram_out'
+        if os.path.exists(self.block_out_dir):
+            shutil.rmtree(self.block_out_dir)
+        os.makedirs(self.block_out_dir)
+        
+        # create a directory for dot files
+        self.dot_out_dir = './dot_diagram_out'
+        if os.path.exists(self.dot_out_dir):
+            shutil.rmtree(self.dot_out_dir)
+        os.makedirs(self.dot_out_dir)
 
     def draw_layout(self):
         """
@@ -34,7 +48,6 @@ class BlockDiagramLayout(object):
                               splines='ortho', multiedges=True,
                               strict=False, overlap=False, rankdir='LR', ranksep='.5', ratio='1', page="11,11",
                               size="20.0, 20.0", margin="1.0")
-        self.dot.graph_attr['bb'] = "-100, -100, 600, 600"
         second_level_nodes = []
         for node, level in self.levels.iteritems():
             if level == 2:
@@ -94,7 +107,7 @@ class BlockDiagramLayout(object):
                                   width='10', height='70', style='filled', color='peachpuff')
                 label = """<<TABLE BGCOLOR="white" WIDTH="200"> \
                     <TR><TD COLSPAN="1" ROWSPAN="1"><TABLE BGCOLOR="lightcyan"> \
-                    <TR><TD BGCOLOR="white">%s</TD></TR> \
+                    <TR><TD BGCOLOR="white"><FONT POINT-SIZE="100">%s</FONT></TD></TR> \
                     </TABLE></TD></TR></TABLE>>"""
                 label_values = [second_level_nodes[n]]
                 label = label % tuple(label_values)
@@ -112,7 +125,7 @@ class BlockDiagramLayout(object):
                                   width='10', height='50', style='filled', color='peachpuff')
                 label = """<<TABLE BGCOLOR="white" WIDTH="200"> \
                     <TR><TD COLSPAN="1" ROWSPAN="1"><TABLE BGCOLOR="lightcyan"> \
-                    <TR><TD BGCOLOR="white">%s</TD></TR> \
+                    <TR><TD BGCOLOR="white"><FONT POINT-SIZE="100">%s</FONT></TD></TR> \
                     </TABLE></TD></TR></TABLE>>"""
                 label_values = [second_level_nodes[n]]
                 label = label % tuple(label_values)
@@ -131,7 +144,7 @@ class BlockDiagramLayout(object):
                                   width='10', height='70', style='filled', color='peachpuff')
                 label = """<<TABLE BGCOLOR="white" WIDTH="200"> \
                         <TR><TD COLSPAN="1" ROWSPAN="1"><TABLE BGCOLOR="lightcyan"> \
-                        <TR><TD BGCOLOR="white">%s</TD></TR> \
+                        <TR><TD BGCOLOR="white"><FONT POINT-SIZE="100">%s</FONT></TD></TR> \
                         <TR><TD>%s</TD></TR> \
                         <TR><TD>%s</TD></TR> \
                         <TR><TD>%s</TD></TR> \
@@ -186,7 +199,7 @@ class BlockDiagramLayout(object):
                           width='7', height='22', style='filled', color='skyblue')
         label = """<<TABLE BGCOLOR="white" WIDTH="200"> \
             <TR><TD COLSPAN="1" ROWSPAN="1"><TABLE BGCOLOR="lightcyan"> \
-            <TR><TD BGCOLOR="white">%s</TD></TR> \
+            <TR><TD BGCOLOR="white"><FONT POINT-SIZE="100">%s</FONT></TD></TR> \
             </TABLE></TD></TR></TABLE>>"""
         label_values = [second_level_nodes[n]]
         label = label % tuple(label_values)
@@ -224,19 +237,23 @@ class BlockDiagramLayout(object):
         direction = main_prop['Direction']
 
         # subgraph
+        label = """<<TABLE BGCOLOR="lavenderblush"> \
+            <TR><TD><FONT POINT-SIZE="100">%s</FONT></TD></TR> \
+            </TABLE>>"""
+        label_values = [main_block]
+        label = label % tuple(label_values)
         self.dot.subgraph(nbunch=bunch, name='cluster_1',
-                          label=main_block)
-
+                          label=label)
         self.dot.edge_attr['style'] = 'filled'
+
         # drawing signals in and out of source
-        print bunch
         for i, item in enumerate(main_prop['Signal Name']):
             if direction[i] == 'out':
                 # TODO need automation here | find math logic later
                 self.dot.add_node(str(i), style='invis')
-
-                self.dot.add_edge(bunch[11], str(i), headlabel=item, ltail='cluster_1',
-                                  taillabel=item.replace('i_', 'o_') + '(src)', arrowhead='normal',
+                src = main_prop['Source'][i]
+                self.dot.add_edge(bunch[11], str(i), ltail='cluster_1',
+                                  taillabel=item.replace('i_', 'o_') + ' (' + src + ')', arrowhead='normal',
                                   fontsize='20', penwidth='1', arrowsize=2, weight=2.)
             else:
                 self.dot.add_node(str(i), style='invis')
@@ -251,7 +268,6 @@ class BlockDiagramLayout(object):
             construct subgraph blocks with their signals
         """
         for i, node in enumerate(nodes):
-            print bunch
             if not i == 3:  # not co-processor node (second row node)
                 node_info = self.knol[node + '.csv']
                 # draw in/out edges
@@ -398,7 +414,6 @@ class BlockDiagramLayout(object):
 
                         else:  # incoming signals to coprocessor form neighbor nodes
                             if node_info['Source'][j]:
-                                print node_info['Source'][j], node
                                 self.dot.add_edge(node_info['Source'][j], node, headlabel=item, arrowhead='normal',
                                                   fontsize='20',
                                                   penwidth='1',
@@ -449,10 +464,15 @@ class BlockDiagramLayout(object):
                                               arrowsize=2, weight=2., style='invis')
 
     def write_dot(self):
-        f = open('block_diag.dot', 'wb')
+        dot_name = 'block_diagram.dot'
+        block_dot_out = self.dot_out_dir + '/' + dot_name
+        f = open(block_dot_out, 'wb')
         f.write(self.dot.string())
         f.close()
-        g = pgv.AGraph(file='block_diag.dot')
+
+        g = pgv.AGraph(file=block_dot_out)
         g.layout(prog='dot')
-        g.draw('block_diag.pdf')
+        block_name = dot_name.replace('.dot', '.pdf')
+        block_pdf = self.block_out_dir + '/' + block_name
+        g.draw(block_pdf)
         g.close()
